@@ -1,0 +1,130 @@
+
+##################################### 全局参数 #######################################################
+
+SetParaFor = global
+
+GenomeInfoFile1=Ref01
+GenomeInfoFile2=Ref02
+GenomeInfoFile3=Ref03
+GenomeInfoFile4=Ref04
+GenomeInfoFile5=Ref05
+GenomeInfoFile6=Ref06
+GenomeInfoFile7=Ref07
+
+
+#GenomeInfoFile2=RefB.info  ##  GenomeInfoFile X  就表示有 X个基因组
+
+LinkFileRef1VsRef2=Syn.02
+LinkFileRef1VsRef3=Syn.03
+LinkFileRef1VsRef4=Syn.04
+LinkFileRef1VsRef5=Syn.05
+LinkFileRef1VsRef6=Syn.06
+LinkFileRef1VsRef7=Syn.07
+
+
+################################ Figure ############################################################
+
+
+##############################     画布 和 图片 参数配置 #################################
+#body=1200   ##   默认是1200，主画布大小设置  另外：up/down/left/right) = (55,25,100,120); #CanvasHeightRitao=1.0 CanvasWidthRitao=1.0
+
+CanvasHeightRitao=2.0    #  画布放大   点 
+CanvasWidthRitao=2.6
+
+
+SetParaFor =ALL
+ChrWidth=12
+NormalizedScale=1              #  统一  在同一标尺上
+SpeRegionWidthRatio=2
+SpeRegionWidthRatio=1.88
+
+SetParaFor = Genome1  #  ALL/GenomeX  X第X个基因组
+MoveToX=1400
+MoveToY=1000
+SpeRegionFile=Spe01
+
+SetParaFor = Genome2
+MoveToX=400
+MoveToY=700
+RotateChr=-30
+SpeRegionFile=Spe02
+
+SetParaFor = Genome3
+MoveToX=1400
+MoveToY=200
+SpeRegionFile=Spe03
+
+SetParaFor = Genome4
+MoveToX=2500
+MoveToY=220
+RotateChr=30
+SpeRegionFile=Spe04
+
+SetParaFor = Genome5
+MoveToX=400
+MoveToY=1300
+RotateChr=30
+SpeRegionFile=Spe05
+
+SetParaFor = Genome6
+MoveToX=1400
+MoveToY=1800
+SpeRegionFile=Spe06
+
+SetParaFor = Genome7
+RotateChr=-30
+MoveToX=2500
+MoveToY=1780
+SpeRegionFile=Spe07
+
+
+
+SetParaFor=Link1  #  对 Link X File 进行设置
+OutsideWidthDeta=-23
+fill="rgb(27,158,119)"
+stroke="rgb(27,158,119)"
+fill-opacity=0.7
+stroke-opacity=0.7
+
+
+SetParaFor=Link2
+OutsideWidthDeta=-23
+fill-opacity=0.7
+stroke-opacity=0.7
+fill="rgb(217,95,2)"
+stroke="rgb(217,95,2)"
+
+SetParaFor=Link3
+OutsideWidthDeta=-23
+stroke-opacity=0.7
+fill-opacity=0.7
+stroke-width=0
+fill="rgb(117,112,179)"
+stroke="rgb(117,112,179)"
+
+SetParaFor=Link4
+OutsideWidthDeta=13
+stroke-opacity=0.7
+fill-opacity=0.7
+stroke="rgb(231,41,138)"
+fill="rgb(231,41,138)"
+stroke-width=0
+
+SetParaFor=Link5
+OutsideWidthDeta=13
+stroke-opacity=0.7
+fill-opacity=0.7
+fill="rgb(102,166,30)"
+stroke="rgb(102,166,30)"
+stroke-width=0
+
+SetParaFor=Link6
+OutsideWidthDeta=13
+stroke-opacity=0.7
+fill-opacity=0.7
+stroke="rgb(230,171,2)"
+fill="rgb(230,171,2)"
+stroke-width=0
+
+
+

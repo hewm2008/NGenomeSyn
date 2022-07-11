@@ -1,0 +1,10 @@
+chr01	500	1000	chr01	500	1000	fill=seagreen	 stroke=seagreen
+chr01	1001	1500	chr01	1001	1500	fill=gold	stroke=gold
+chr01   1800    2200    chr01   1701    2000	fill=gold	stroke=gold
+chr01   2601    2800	chr01   2001    2200	fill=seagreen	 stroke=seagreen
+chr01	4500	4800	chr01	3000	3300	fill=seagreen	 stroke=seagreen
+chr01	4801	5100	chr01	3301	3600	fill=gold	stroke=gold
+chr01   5200    5500    chr01   4000    4300	fill=gold	stroke=gold
+chr01   5600    5700    chr01   4500    4600	fill=gold	stroke=gold
+chr01   5701    5800    chr01   4601    4700	fill=seagreen	 stroke=seagreen
+chr01   2300    2600    chr01	3701	3900	fill=red	stroke=Dred

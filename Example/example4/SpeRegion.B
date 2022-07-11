@@ -1,0 +1,10 @@
+chr01	500	1000	5UTR	fill=green	 stroke=green
+chr01	1001	1500	CDS	fill=blue	stroke=blue
+chr01   1701    2000    CDS fill=blue   stroke=blue
+chr01   2001    2200    3UTR fill=green   stroke=green
+chr01	3000	3300	5UTR	fill=green	 stroke=green
+chr01	3301	3600	CDS	fill=blue	stroke=blue
+chr01	3701	3900	CDS	fill=blue	stroke=blue
+chr01   4000    4300    CDS fill=blue   stroke=blue
+chr01   4500    4600    CDS fill=blue   stroke=blue
+chr01   4601    4700    3UTR fill=green   stroke=green

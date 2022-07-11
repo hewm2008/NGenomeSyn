@@ -1,0 +1,35 @@
+
+SetParaFor = global
+
+GenomeInfoFile1=RefA.len
+GenomeInfoFile2=RefB.len
+GenomeInfoFile3=RefC.len
+
+LinkFileRef1VsRef2=syn1.data
+LinkFileRef1VsRef3=syn2.data
+LinkFileRef2VsRef3=syn3.data
+
+
+SetParaFor = Genome1
+ZoomChr=0.5
+
+SetParaFor = Genome2
+ShiftX=-300
+ZoomChr=0.2
+
+SetParaFor = Genome3
+ShiftX=200
+ShiftY=-200
+ZoomChr=0.3
+
+
+SetParaFor=Link2   # ¿¿¿¿¿¿LinkFileRef ¿¿¿¿¿¿
+Reverse=1          # ¿¿syn¿¿¿¿¿¿
+fill="#F8F8F8"     #  ¿¿¿¿syn¿¿¿,¿¿¿¿¿¿¿¿¿¿¿¿
+stroke-opacity=0.8  
+fill-opacity=0.8        ## ¿¿¿¿syn¿  ¿¿¿
+
+SetParaFor =Link3
+HightRation=1.5
+StyleUpDown=DownDown  ##  DownDown  UpUp  DownUp  UpDown ¿¿¿¿¿link¿¿
+Reverse=1

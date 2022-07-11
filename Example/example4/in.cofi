@@ -1,0 +1,32 @@
+
+##################################### 全局参数 #######################################################
+
+SetParaFor = global
+
+GenomeInfoFile1=RefA.len
+GenomeInfoFile2=RefB.len  ##  GenomeInfoFile X  就表示有 X个基因组
+LinkFileRef1VsRef2=cds.syn
+
+
+SetParaFor = Genome1  #  Genome1  第1个基因组
+NormalizedScale=1      ###  用统一的标尺  不用自身
+GenomeName="RefA chr01:8-9M"
+ChrWidth=12
+
+SpeRegionFile = SpeRegion.A  ## 文件,表记特别区域[格式chr start End (xx=yy加属性等)]
+SpeRegionWidthRatio=2    ##   region 默认有高度同ChrWidth  现改为2倍 上下各高出0.5
+
+
+SetParaFor = Genome2  #  ALL/GenomeX  X第X个基因组
+ChrWidth=12
+GenomeName="RefB chr01:10-11M"
+NormalizedScale=1        ###  用统一的标尺  不用自身
+
+SpeRegionFile = SpeRegion.B
+SpeRegionWidthRatio=2    ##   region 默认有高度同ChrWidth  现改为2倍 上下各高出0.5
+
+
+
+SetParaFor=Link1
+OutsideWidthDeta=10  ##  link 上下 链接 Genome处缩小10 
+ShortLinkLineRefA=2    ##  or 仅缩短 链接RefA的 link
