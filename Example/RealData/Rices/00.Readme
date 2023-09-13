@@ -1,0 +1,8 @@
+##  To test pan-genomes syntenic relationships with real data   ###
+##  we download the 6 rices genome at this paper [Pan-genome analysis of 33 genetically diverse rice accessions reveals hidden genomic variations] and irgsp1 rice ###
+##  datasets downloaded form this website https://ricerc.sicau.edu.cn/  and https://rapdb.dna.affrc.go.jp ###
+ 
+##   then run GetTwoGenomeSyn.pl to get input file(Files at this Dir), remove the xx.fa ,such as follow ###
+
+###  perl  ../../bin/GetTwoGenomeSyn.pl     -MappingBin  minimap2    -BinDir    /hwfssz4/BC_PUB/Software/08.Centos7/minimap2-2.23/   -InGenomeA Oryza_sativa.v7.0.fa    -InGenomeB   ZH11.genome.fa     -OutPrefix   IRGSP_ZH11   -MinAlnLen 20000  ##
+

@@ -1,0 +1,9 @@
+# Please execute the following command first to work in the upper directory
+	mv  example*_CN  ../
+
+## example1  :  For the simplest usage for two genomic, and an integrating pipeline and processing data and visualizing 
+## example2  :  Horizontal layout of 3 or more genomes ,  arrangement genome and highlighting special region 
+## example3  :  Link settings , five link styles, arrangement genome
+## example4  :  ZoomRegion function,and local gene structure(CDS mRNA) collinearity
+## example5  :  Horizontal layout of >3 genomes, the Comprehensive configuration
+## example6  :  Deletion in some breeds,(pan-genome frequently analysis)

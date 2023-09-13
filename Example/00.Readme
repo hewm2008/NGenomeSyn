@@ -1,0 +1,10 @@
+## all the example is come from the real datas ##
+
+## example1	: An integrating pipeline including data preparation and visualizing of two genomes for the simplest usage
+## example2	: Horizontal layout of 3 or more genomes, genome layout adjustment and special region highlight
+## example3	: Link settings, five link styles, genome layout adjustment for particular shape (triangle)
+## example4	: ZoomRegion function of local gene structure (CDS mRNA) collinearity
+## example5	: The comprehensive configuration for horizontal layout of more than three genomes (>3)
+## example6	: Quick identification of genetic deletion in some breeds (pan-genome frequently analysis) to solve biological problems
+
+
