@@ -16,6 +16,6 @@ mv    OUT2.A2B.link   ../RealData/Yeast/R64_YJM1447.link
 ../../bin/NGenomeSyn	-InConf	in1.conf	-OutPut	MCScanX
 
 ##      For mummer ,the Coords2Link also can be run as folows ## 
-###   perl ../../bin/GetTwoGenomeSyn.pl   Coords2Link  In.filter.coords  OutPre.link  ###
+###   perl ../../bin/GetTwoGenomeSyn.pl   Coords2Link  In.filter.coords 5000  OutPre.link  ###
 echo End Time : 
 date
