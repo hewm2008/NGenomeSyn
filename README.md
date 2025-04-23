@@ -1,5 +1,9 @@
 
 # NGenomeSyn
+
+[![GitHub stars](https://img.shields.io/github/stars/hewm2008/NGenomeSyn.svg?style=social&label=Star)](https://github.com/hewm2008/NGenomeSyn) [![Downloads](https://img.shields.io/github/downloads/hewm2008/NGenomeSyn/total.svg?style=flat-square&label=Downloads)](https://github.com/hewm2008/NGenomeSyn/releases) 
+
+
 An easy-to-use and flexible tool for publication-ready visualization of syntenic relationships on multiple genomes
 
 The <i><b>[NGenomeSyn article](https://doi.org/10.1093/bioinformatics/btad121)</b></i> has been published in <b> [Bioinformatics](https://doi.org/10.1093/bioinformatics/btad121) Journal</b>, please cited this article if possible
