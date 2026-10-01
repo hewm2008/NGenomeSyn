@@ -46,12 +46,14 @@ sub checkUpdate
 
 #checkUpdate($0);
 
-my $SVGTest=`  perl -MSVG -e " print\\\"SVG\\\" "  2>  /dev/null  `;
-if (!((defined $SVGTest)  && ($SVGTest eq "SVG" )) )
+my $SVGTest="";
+if ( eval { require SVG; 1 } ) { $SVGTest="SVG"; }
+if (!((defined $SVGTest)  and ($SVGTest eq "SVG" )) )
 {
 	print "Warining: SVG module in Perl is missing, trying to loading the built-in [SVG.pm]...\n";
-	$SVGTest=` perl -I$Bin/svg_kit -I$RealBin/svg_kit -MSVG -e "print\\\"SVG\\\""   2>  /dev/null  `;
-	if ( !((defined $SVGTest)  &&  ($SVGTest eq "SVG" )) )
+	$SVGTest="";
+	if ( eval { unshift @INC, "$RealBin/svg_kit"; unshift @INC, "$Bin/svg_kit"; require SVG; 1 } ) { $SVGTest="SVG"; }
+	if ( !((defined $SVGTest)  and  ($SVGTest eq "SVG" )) )
 	{
 		print "Warining: Can't load the [SVG.pm] Modules in myself,please install the SVG module from this URL [ https://metacpan.org/release/SVG ]\n"; 
 		print "Error:\tPre-installations perl SVG.pm before installing/run NGenomeSyn\n";
@@ -79,7 +81,7 @@ sub  usage2
 {
 	print STDERR <<USAGE;
 
-		Version:1.43         hewm2008\@gmail.com
+		Version:1.50         hewm2008\@gmail.com
 
 		Usage: $RealBin/NGenomeSyn  -InConfi	in.cofi	-OutPut	OUT\n
 
@@ -103,7 +105,7 @@ sub  usage
 {
 	print STDERR <<USAGE;
 
-		Version:1.43         hewm2008\@gmail.com
+		Version:1.50         hewm2008\@gmail.com
 
 		Options
 

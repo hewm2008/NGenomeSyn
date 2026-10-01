@@ -1,0 +1,1917 @@
+{
+ "meta": {
+  "tool": "NGenomeSyn",
+  "version": "1.50",
+  "engine_source": "bin/NGenomeSyn",
+  "generated_by": "gui/tools/gen_schema.py"
+ },
+ "categories": {
+  "files": {
+   "zh": "数据分组",
+   "en": "Data grouping"
+  },
+  "canvas": {
+   "zh": "画布与字体",
+   "en": "Canvas & font"
+  },
+  "title": {
+   "zh": "主标题",
+   "en": "Main title"
+  },
+  "genome": {
+   "zh": "基因组与染色体",
+   "en": "Genome & chromosomes"
+  },
+  "genome_name": {
+   "zh": "基因组名称",
+   "en": "Genome label"
+  },
+  "chr_name": {
+   "zh": "染色体名称",
+   "en": "Chromosome label"
+  },
+  "axis": {
+   "zh": "坐标轴",
+   "en": "Coordinate axis"
+  },
+  "spe_region": {
+   "zh": "特殊区域与缩放",
+   "en": "Regions & zoom"
+  },
+  "link": {
+   "zh": "链接",
+   "en": "Links"
+  },
+  "style": {
+   "zh": "样式 (SVG)",
+   "en": "Style (SVG)"
+  },
+  "color": {
+   "zh": "调色板",
+   "en": "Color palettes"
+  }
+ },
+ "plot_types": [],
+ "palettes": {
+  "builtin": {
+   "Accent": {
+    "max": 8,
+    "qualitative": true,
+    "colors": [
+     "#7FC97F",
+     "#BEAED4",
+     "#FDC086",
+     "#FFFF99",
+     "#386CB0",
+     "#F0027F",
+     "#BF5B17",
+     "#666666"
+    ]
+   },
+   "Dark2": {
+    "max": 8,
+    "qualitative": true,
+    "colors": [
+     "#1B9E77",
+     "#D95F02",
+     "#7570B3",
+     "#E7298A",
+     "#66A61E",
+     "#E6AB02",
+     "#A6761D",
+     "#666666"
+    ]
+   },
+   "Paired": {
+    "max": 12,
+    "qualitative": true,
+    "colors": [
+     "#A6CEE3",
+     "#1F78B4",
+     "#B2DF8A",
+     "#33A02C",
+     "#FB9A99",
+     "#E31A1C",
+     "#FDBF6F",
+     "#FF7F00",
+     "#CAB2D6",
+     "#6A3D9A",
+     "#FFFF99",
+     "#B15928"
+    ]
+   },
+   "Pastel1": {
+    "max": 9,
+    "qualitative": true,
+    "colors": [
+     "#FBB4AE",
+     "#B3CDE3",
+     "#CCEBC5",
+     "#DECBE4",
+     "#FED9A6",
+     "#FFFFCC",
+     "#E5D8BD",
+     "#FDDAEC",
+     "#F2F2F2"
+    ]
+   },
+   "Pastel2": {
+    "max": 8,
+    "qualitative": true,
+    "colors": [
+     "#B3E2CD",
+     "#FDCDAC",
+     "#CBD5E8",
+     "#F4CAE4",
+     "#E6F5C9",
+     "#FFF2AE",
+     "#F1E2CC",
+     "#CCCCCC"
+    ]
+   },
+   "Set1": {
+    "max": 9,
+    "qualitative": true,
+    "colors": [
+     "#E41A1C",
+     "#377EB8",
+     "#4DAF4A",
+     "#984EA3",
+     "#FF7F00",
+     "#FFFF33",
+     "#A65628",
+     "#F781BF",
+     "#999999"
+    ]
+   },
+   "Set2": {
+    "max": 8,
+    "qualitative": true,
+    "colors": [
+     "#66C2A5",
+     "#FC8D62",
+     "#8DA0CB",
+     "#E78AC3",
+     "#A6D854",
+     "#FFD92F",
+     "#E5C494",
+     "#B3B3B3"
+    ]
+   },
+   "Set3": {
+    "max": 12,
+    "qualitative": true,
+    "colors": [
+     "#8DD3C7",
+     "#FFFFB3",
+     "#BEBADA",
+     "#FB8072",
+     "#80B1D3",
+     "#FDB462",
+     "#B3DE69",
+     "#FCCDE5",
+     "#D9D9D9",
+     "#BC80BD",
+     "#CCEBC5",
+     "#FFED6F"
+    ]
+   },
+   "BrBG": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#543005",
+     "#8C510A",
+     "#BF812D",
+     "#DFC27D",
+     "#F6E8C3",
+     "#F5F5F5",
+     "#C7EAE5",
+     "#80CDC1",
+     "#35978F",
+     "#01665E",
+     "#003C30"
+    ]
+   },
+   "PRGn": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#40004B",
+     "#762A83",
+     "#9970AB",
+     "#C2A5CF",
+     "#E7D4E8",
+     "#F7F7F7",
+     "#D9F0D3",
+     "#A6DBA0",
+     "#5AAE61",
+     "#1B7837",
+     "#00441B"
+    ]
+   },
+   "PuOr": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#7F3B08",
+     "#B35806",
+     "#E08214",
+     "#FDB863",
+     "#FEE0B6",
+     "#F7F7F7",
+     "#D8DAEB",
+     "#B2ABD2",
+     "#8073AC",
+     "#542788",
+     "#2D004B"
+    ]
+   },
+   "RdBu": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#67001F",
+     "#B2182B",
+     "#D6604D",
+     "#F4A582",
+     "#FDDBC7",
+     "#F7F7F7",
+     "#D1E5F0",
+     "#92C5DE",
+     "#4393C3",
+     "#2166AC",
+     "#053061"
+    ]
+   },
+   "RdGy": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#67001F",
+     "#B2182B",
+     "#D6604D",
+     "#F4A582",
+     "#FDDBC7",
+     "#FFFFFF",
+     "#E0E0E0",
+     "#BABABA",
+     "#878787",
+     "#4D4D4D",
+     "#1A1A1A"
+    ]
+   },
+   "RdYlBu": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#A50026",
+     "#D73027",
+     "#F46D43",
+     "#FDAE61",
+     "#FEE090",
+     "#FFFFBF",
+     "#E0F3F8",
+     "#ABD9E9",
+     "#74ADD1",
+     "#4575B4",
+     "#313695"
+    ]
+   },
+   "RdYlGn": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#A50026",
+     "#D73027",
+     "#F46D43",
+     "#FDAE61",
+     "#FEE08B",
+     "#FFFFBF",
+     "#D9EF8B",
+     "#A6D96A",
+     "#66BD63",
+     "#1A9850",
+     "#006837"
+    ]
+   },
+   "GnYlRd": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#006837",
+     "#1A9850",
+     "#66BD63",
+     "#A6D96A",
+     "#D9EF8B",
+     "#FFFFBF",
+     "#FEE08B",
+     "#FDAE61",
+     "#F46D43",
+     "#D73027",
+     "#A50026"
+    ]
+   },
+   "Spectral": {
+    "max": 11,
+    "qualitative": false,
+    "colors": [
+     "#9E0142",
+     "#D53E4F",
+     "#F46D43",
+     "#FDAE61",
+     "#FEE08B",
+     "#FFFFBF",
+     "#E6F598",
+     "#ABDDA4",
+     "#66C2A5",
+     "#3288BD",
+     "#5E4FA2"
+    ]
+   },
+   "Blues": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#F7FBFF",
+     "#DEEBF7",
+     "#C6DBEF",
+     "#9ECAE1",
+     "#6BAED6",
+     "#4292C6",
+     "#2171B5",
+     "#08519C",
+     "#08306B"
+    ]
+   },
+   "BuGn": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#F7FCFD",
+     "#E5F5F9",
+     "#CCECE6",
+     "#99D8C9",
+     "#66C2A4",
+     "#41AE76",
+     "#238B45",
+     "#006D2C",
+     "#00441B"
+    ]
+   },
+   "BuPu": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#F7FCFD",
+     "#E0ECF4",
+     "#BFD3E6",
+     "#9EBCDA",
+     "#8C96C6",
+     "#8C6BB1",
+     "#88419D",
+     "#810F7C",
+     "#4D004B"
+    ]
+   },
+   "GnBu": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#F7FCF0",
+     "#E0F3DB",
+     "#CCEBC5",
+     "#A8DDB5",
+     "#7BCCC4",
+     "#4EB3D3",
+     "#2B8CBE",
+     "#0868AC",
+     "#084081"
+    ]
+   },
+   "Greens": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#F7FCF5",
+     "#E5F5E0",
+     "#C7E9C0",
+     "#A1D99B",
+     "#74C476",
+     "#41AB5D",
+     "#238B45",
+     "#006D2C",
+     "#00441B"
+    ]
+   },
+   "Greys": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFFFFF",
+     "#F0F0F0",
+     "#D9D9D9",
+     "#BDBDBD",
+     "#969696",
+     "#737373",
+     "#525252",
+     "#252525",
+     "#000000"
+    ]
+   },
+   "Oranges": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFF5EB",
+     "#FEE6CE",
+     "#FDD0A2",
+     "#FDAE6B",
+     "#FD8D3C",
+     "#F16913",
+     "#D94801",
+     "#A63603",
+     "#7F2704"
+    ]
+   },
+   "OrRd": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFF7EC",
+     "#FEE8C8",
+     "#FDD49E",
+     "#FDBB84",
+     "#FC8D59",
+     "#EF6548",
+     "#D7301F",
+     "#B30000",
+     "#7F0000"
+    ]
+   },
+   "PuBu": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFF7FB",
+     "#ECE7F2",
+     "#D0D1E6",
+     "#A6BDDB",
+     "#74A9CF",
+     "#3690C0",
+     "#0570B0",
+     "#045A8D",
+     "#023858"
+    ]
+   },
+   "PuBuGn": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFF7FB",
+     "#ECE2F0",
+     "#D0D1E6",
+     "#A6BDDB",
+     "#67A9CF",
+     "#3690C0",
+     "#02818A",
+     "#016C59",
+     "#014636"
+    ]
+   },
+   "PuRd": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#F7F4F9",
+     "#E7E1EF",
+     "#D4B9DA",
+     "#C994C7",
+     "#DF65B0",
+     "#E7298A",
+     "#CE1256",
+     "#980043",
+     "#67001F"
+    ]
+   },
+   "Purples": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FCFBFD",
+     "#EFEDF5",
+     "#DADAEB",
+     "#BCBDDC",
+     "#9E9AC8",
+     "#807DBA",
+     "#6A51A3",
+     "#54278F",
+     "#3F007D"
+    ]
+   },
+   "RdPu": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFF7F3",
+     "#FDE0DD",
+     "#FCC5C0",
+     "#FA9FB5",
+     "#F768A1",
+     "#DD3497",
+     "#AE017E",
+     "#7A0177",
+     "#49006A"
+    ]
+   },
+   "Reds": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFF5F0",
+     "#FEE0D2",
+     "#FCBBA1",
+     "#FC9272",
+     "#FB6A4A",
+     "#EF3B2C",
+     "#CB181D",
+     "#A50F15",
+     "#67000D"
+    ]
+   },
+   "YlGn": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFFFE5",
+     "#F7FCB9",
+     "#D9F0A3",
+     "#ADDD8E",
+     "#78C679",
+     "#41AB5D",
+     "#238443",
+     "#006837",
+     "#004529"
+    ]
+   },
+   "YlGnBu": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFFFD9",
+     "#EDF8B1",
+     "#C7E9B4",
+     "#7FCDBB",
+     "#41B6C4",
+     "#1D91C0",
+     "#225EA8",
+     "#253494",
+     "#081D58"
+    ]
+   },
+   "YlOrBr": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFFFE5",
+     "#FFF7BC",
+     "#FEE391",
+     "#FEC44F",
+     "#FE9929",
+     "#EC7014",
+     "#CC4C02",
+     "#993404",
+     "#662506"
+    ]
+   },
+   "YlOrRd": {
+    "max": 9,
+    "qualitative": false,
+    "colors": [
+     "#FFFFCC",
+     "#FFEDA0",
+     "#FED976",
+     "#FEB24C",
+     "#FD8D3C",
+     "#FC4E2A",
+     "#E31A1C",
+     "#BD0026",
+     "#800026"
+    ]
+   }
+  },
+  "files": {}
+ },
+ "aliases": {
+  "MainCor": "MainColor",
+  "MoveX": "MoveToX",
+  "MoveY": "MoveToY",
+  "GenomeNameRatio": "GenomeNameSizeRatio",
+  "HightRation": "HeightRatio"
+ },
+ "value_aliases": {
+  "StyleUpDown": {
+   "UpUP": "UpUp"
+  }
+ },
+ "style_choices": [
+  "UpDown",
+  "DownUp",
+  "UpUp",
+  "DownDown",
+  "line"
+ ],
+ "params": [
+  {
+   "name": "body",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 2,
+   "type": "int",
+   "choices": null,
+   "min": 50,
+   "max": null,
+   "default": 1200,
+   "label_zh": "画布主体宽度",
+   "label_en": "Body width",
+   "desc_zh": "主绘图区宽度(px)。总画布宽 = left+body+right。",
+   "desc_en": "Main drawing width (px). Total width = left+body+right.",
+   "plot_types": []
+  },
+  {
+   "name": "up",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 1,
+   "type": "int",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 55,
+   "label_zh": "上边距",
+   "label_en": "Top margin",
+   "desc_zh": "画布上边距(px)，主标题基线与 up/2 相关。",
+   "desc_en": "Top margin (px); main title baseline depends on up/2.",
+   "plot_types": []
+  },
+  {
+   "name": "down",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 1,
+   "type": "int",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 25,
+   "label_zh": "下边距",
+   "label_en": "Bottom margin",
+   "desc_zh": "画布下边距(px)。",
+   "desc_en": "Bottom margin (px).",
+   "plot_types": []
+  },
+  {
+   "name": "left",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 1,
+   "type": "int",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 100,
+   "label_zh": "左边距",
+   "label_en": "Left margin",
+   "desc_zh": "画布左边距(px)，也参与主标题水平居中。",
+   "desc_en": "Left margin (px); also used to centre the main title.",
+   "plot_types": []
+  },
+  {
+   "name": "right",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 1,
+   "type": "int",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 120,
+   "label_zh": "右边距",
+   "label_en": "Right margin",
+   "desc_zh": "画布右边距(px)，是各基因组 X 坐标的基准。",
+   "desc_en": "Right margin (px); base of per-genome X positions.",
+   "plot_types": []
+  },
+  {
+   "name": "font-size",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 2,
+   "type": "float",
+   "choices": null,
+   "min": 1,
+   "max": null,
+   "default": 10,
+   "label_zh": "基础字号",
+   "label_en": "Base font size",
+   "desc_zh": "全局基础字号。染色体名=×1.2，坐标标签=×1.0，主标题=×1.2，基因组名=×1.4。",
+   "desc_en": "Base font size. Chr names ×1.2, axis labels ×1.0, main title ×1.2, genome labels ×1.4.",
+   "plot_types": []
+  },
+  {
+   "name": "font-family",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 1,
+   "type": "text",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": "Arial",
+   "label_zh": "字体",
+   "label_en": "Font family",
+   "desc_zh": "全部文字的字体，原样传给 SVG（如 Arial / Times New Roman）。",
+   "desc_en": "Font family passed verbatim to the SVG (e.g. Arial).",
+   "plot_types": []
+  },
+  {
+   "name": "CanvasHeightRitao",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 2,
+   "type": "float",
+   "choices": null,
+   "min": 0.1,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "画布高度比例",
+   "label_en": "Canvas height ratio",
+   "desc_zh": "整体高度缩放系数。注意引擎要求 >0.1，否则该参数被静默忽略（拼写 Ritao 是引擎历史拼写，必须照写）。",
+   "desc_en": "Scales total height. Must be >0.1 or the engine silently ignores it (the 'Ritao' spelling is the engine's, keep it).",
+   "plot_types": []
+  },
+  {
+   "name": "CanvasWidthRitao",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": 0.1,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "画布宽度比例",
+   "label_en": "Canvas width ratio",
+   "desc_zh": "整体宽度缩放系数，同样要求 >0.1。",
+   "desc_en": "Scales total width; also must be >0.1.",
+   "plot_types": []
+  },
+  {
+   "name": "RotatePng",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 0,
+   "type": "int",
+   "choices": null,
+   "min": -360,
+   "max": 360,
+   "default": 0,
+   "label_zh": "PNG 旋转角度",
+   "label_en": "PNG rotation",
+   "desc_zh": "仅对导出的 PNG 生效（convert -rotate），不改 SVG。",
+   "desc_en": "Rotates the exported PNG only (never the SVG).",
+   "plot_types": []
+  },
+  {
+   "name": "NoPng",
+   "scope": [
+    "global"
+   ],
+   "category": "canvas",
+   "old_names": [],
+   "importance": 0,
+   "type": "bool",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "不输出 PNG",
+   "label_en": "No PNG output",
+   "desc_zh": "只要该键存在即不生成 PNG（写 0 也会生效）。GUI 预览渲染始终自带 PNG/PDF 导出，无需此项。",
+   "desc_en": "The engine skips PNG whenever the key exists (even 0). The GUI renders PNG/PDF itself, so you normally never need it.",
+   "plot_types": [],
+   "presence_only": true
+  },
+  {
+   "name": "Main",
+   "scope": [
+    "global"
+   ],
+   "category": "title",
+   "old_names": [],
+   "importance": 2,
+   "type": "text",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "主标题文字",
+   "label_en": "Main title",
+   "desc_zh": "整图顶部居中的大标题。",
+   "desc_en": "Big centred title at the top of the figure.",
+   "plot_types": []
+  },
+  {
+   "name": "MainColor",
+   "scope": [
+    "global"
+   ],
+   "category": "title",
+   "old_names": [
+    "MainCor"
+   ],
+   "importance": 2,
+   "type": "color",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": "blue",
+   "label_zh": "主标题颜色",
+   "label_en": "Main title color",
+   "desc_zh": "标题颜色（默认 blue）。注意历史文档中的 MainCor 是无效拼写，GUI 会自动改写。",
+   "desc_en": "Title color (default blue). The 'MainCor' spelling found in old docs is a typo the GUI auto-corrects.",
+   "plot_types": []
+  },
+  {
+   "name": "MainRatioFontSize",
+   "scope": [
+    "global"
+   ],
+   "category": "title",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "标题字号比例",
+   "label_en": "Title font ratio",
+   "desc_zh": "标题字号 = font-size × 1.2 × 该比例。",
+   "desc_en": "Title font = font-size × 1.2 × ratio.",
+   "plot_types": []
+  },
+  {
+   "name": "ShiftMainX",
+   "scope": [
+    "global"
+   ],
+   "category": "title",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "标题水平偏移",
+   "label_en": "Title shift X",
+   "desc_zh": "主标题水平微调(px)。",
+   "desc_en": "Horizontal nudge for the title (px).",
+   "plot_types": []
+  },
+  {
+   "name": "ShiftMainY",
+   "scope": [
+    "global"
+   ],
+   "category": "title",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "标题垂直偏移",
+   "label_en": "Title shift Y",
+   "desc_zh": "主标题垂直微调(px)，基准为 up/2 - 2×font-size。",
+   "desc_en": "Vertical nudge for the title (px); base is up/2 - 2×font-size.",
+   "plot_types": []
+  },
+  {
+   "name": "TotalGenomeNumber",
+   "scope": [
+    "global"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 0,
+   "type": "int",
+   "choices": null,
+   "min": 2,
+   "max": null,
+   "default": null,
+   "label_zh": "基因组总数(覆盖)",
+   "label_en": "Total genome number",
+   "desc_zh": "覆盖自动检测的基因组数量（高级用法；正常情况下由 GenomeInfoFileN 与 SetParaFor=GenomeN 自动推断）。",
+   "desc_en": "Overrides the auto-detected genome count (advanced; normally inferred from GenomeInfoFileN / SetParaFor=GenomeN).",
+   "plot_types": []
+  },
+  {
+   "name": "ZoomChr",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 2,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "染色体长度缩放",
+   "label_en": "Chromosome zoom",
+   "desc_zh": ">1 放大、<1 缩小、=1 等长。不能为 0（会导致引擎除零崩溃）。",
+   "desc_en": ">1 enlarge, <1 shrink. Must not be 0 (division by zero in the engine).",
+   "plot_types": []
+  },
+  {
+   "name": "ChrWidth",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 2,
+   "type": "int",
+   "choices": null,
+   "min": 1,
+   "max": null,
+   "default": 20,
+   "label_zh": "染色体条宽度",
+   "label_en": "Chromosome width",
+   "desc_zh": "染色体条在画布上的粗细(px)。",
+   "desc_en": "Thickness of the chromosome bars (px).",
+   "plot_types": []
+  },
+  {
+   "name": "LinkWidth",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 2,
+   "type": "int",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 180,
+   "label_zh": "链接区高度",
+   "label_en": "Link band height",
+   "desc_zh": "本基因组与下一个基因组之间链接带的垂直空间(px)。",
+   "desc_en": "Vertical band between this genome and the next one (px).",
+   "plot_types": []
+  },
+  {
+   "name": "ChrSpacing",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 2,
+   "type": "int",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 10,
+   "label_zh": "染色体间距",
+   "label_en": "Chromosome spacing",
+   "desc_zh": "同一基因组内相邻染色体之间的间隔(px)。",
+   "desc_en": "Gap between neighbouring chromosomes of one genome (px).",
+   "plot_types": []
+  },
+  {
+   "name": "NormalizedScale",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 1,
+   "type": "bool",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": "0",
+   "label_zh": "使用自有标尺",
+   "label_en": "Own scale",
+   "desc_zh": "0=与默认基因组共用标尺；1=该基因组使用自己的坐标比例。",
+   "desc_en": "0=share the global scale; 1=this genome keeps its own scale.",
+   "plot_types": []
+  },
+  {
+   "name": "EndCurveRadian",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 1,
+   "type": "int",
+   "choices": null,
+   "min": 2,
+   "max": null,
+   "default": 3,
+   "label_zh": "末端圆角半径",
+   "label_en": "End curve radius",
+   "desc_zh": "染色体末端圆角(px)。引擎要求 ≥2，小于 2 会被强制改回 2。",
+   "desc_en": "Rounded-cap radius of chromosome ends (px). The engine clamps values <2 back to 2.",
+   "plot_types": []
+  },
+  {
+   "name": "RotateChr",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 2,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "染色体旋转角度",
+   "label_en": "Chromosome rotation",
+   "desc_zh": "整组染色体绕起点旋转的角度，>0 顺时针、<0 逆时针。",
+   "desc_en": "Rotates the whole chromosome block about its start point; >0 clockwise.",
+   "plot_types": []
+  },
+  {
+   "name": "ShiftX",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 2,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "相对平移 X",
+   "label_en": "Relative shift X",
+   "desc_zh": "在默认布局基础上平移该基因组(px)，与 MoveToX 叠加。",
+   "desc_en": "Translates this genome relative to the default layout (px); additive with MoveToX.",
+   "plot_types": []
+  },
+  {
+   "name": "ShiftY",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [],
+   "importance": 2,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "相对平移 Y",
+   "label_en": "Relative shift Y",
+   "desc_zh": "在默认布局基础上平移该基因组(px)，与 MoveToY 叠加。",
+   "desc_en": "Translates this genome relative to the default layout (px); additive with MoveToY.",
+   "plot_types": []
+  },
+  {
+   "name": "MoveToX",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [
+    "MoveX"
+   ],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "绝对定位 X",
+   "label_en": "Absolute position X",
+   "desc_zh": "把该基因组起点放到画布绝对 X 坐标（与 ShiftX 叠加）。手册中的 MoveX 是无效拼写。",
+   "desc_en": "Absolute canvas X of the chromosome start (combined with ShiftX). 'MoveX' in the manual is a typo.",
+   "plot_types": []
+  },
+  {
+   "name": "MoveToY",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome",
+   "old_names": [
+    "MoveY"
+   ],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "绝对定位 Y",
+   "label_en": "Absolute position Y",
+   "desc_zh": "把该基因组起点放到画布绝对 Y 坐标（与 ShiftY 叠加）。手册中的 MoveY 是无效拼写。",
+   "desc_en": "Absolute canvas Y of the chromosome start (combined with ShiftY). 'MoveY' in the manual is a typo.",
+   "plot_types": []
+  },
+  {
+   "name": "GenomeName",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome_name",
+   "old_names": [],
+   "importance": 2,
+   "type": "text",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "基因组名称",
+   "label_en": "Genome label",
+   "desc_zh": "左侧斜体基因组名。默认取 .len 文件名去掉扩展名。",
+   "desc_en": "Italic genome label on the left. Defaults to the .len basename.",
+   "plot_types": []
+  },
+  {
+   "name": "GenomeNameColor",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome_name",
+   "old_names": [],
+   "importance": 1,
+   "type": "color",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "基因组名颜色",
+   "label_en": "Genome label color",
+   "desc_zh": "默认取该基因组染色体条的颜色。",
+   "desc_en": "Defaults to this genome's chromosome bar color.",
+   "plot_types": []
+  },
+  {
+   "name": "GenomeNameSizeRatio",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome_name",
+   "old_names": [
+    "GenomeNameRatio"
+   ],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "基因组名字号比例",
+   "label_en": "Genome label size ratio",
+   "desc_zh": "基因组名字号 = font-size × 1.4 × 比例。历史文档中的 GenomeNameRatio 是无效拼写。",
+   "desc_en": "Label font = font-size × 1.4 × ratio. 'GenomeNameRatio' in old docs is a typo.",
+   "plot_types": []
+  },
+  {
+   "name": "GenomeNameShiftX",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome_name",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "基因组名水平偏移",
+   "label_en": "Genome label shift X",
+   "desc_zh": "基因组名水平微调(px)。",
+   "desc_en": "Horizontal nudge of the genome label (px).",
+   "plot_types": []
+  },
+  {
+   "name": "GenomeNameShiftY",
+   "scope": [
+    "genome"
+   ],
+   "category": "genome_name",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "基因组名垂直偏移",
+   "label_en": "Genome label shift Y",
+   "desc_zh": "基因组名垂直微调(px)。",
+   "desc_en": "Vertical nudge of the genome label (px).",
+   "plot_types": []
+  },
+  {
+   "name": "ChrNameShow",
+   "scope": [
+    "genome"
+   ],
+   "category": "chr_name",
+   "old_names": [],
+   "importance": 2,
+   "type": "bool",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "显示染色体名",
+   "label_en": "Show chromosome names",
+   "desc_zh": "在染色体条上方显示染色体名称。",
+   "desc_en": "Draw the chromosome name above each bar.",
+   "plot_types": []
+  },
+  {
+   "name": "ChrNameSizeRatio",
+   "scope": [
+    "genome"
+   ],
+   "category": "chr_name",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "染色体名字号比例",
+   "label_en": "Chr name size ratio",
+   "desc_zh": "染色体名字号 = font-size × 1.2 × 比例。",
+   "desc_en": "Name font = font-size × 1.2 × ratio.",
+   "plot_types": []
+  },
+  {
+   "name": "ChrNameColor",
+   "scope": [
+    "genome"
+   ],
+   "category": "chr_name",
+   "old_names": [],
+   "importance": 1,
+   "type": "color",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "染色体名颜色",
+   "label_en": "Chr name color",
+   "desc_zh": "默认取该基因组染色体条颜色。",
+   "desc_en": "Defaults to this genome's chromosome bar color.",
+   "plot_types": []
+  },
+  {
+   "name": "ChrNameShiftX",
+   "scope": [
+    "genome"
+   ],
+   "category": "chr_name",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "染色体名水平偏移",
+   "label_en": "Chr name shift X",
+   "desc_zh": "染色体名水平微调(px)，可与 .len 行内属性叠加。",
+   "desc_en": "Horizontal nudge (px); additive with per-row values.",
+   "plot_types": []
+  },
+  {
+   "name": "ChrNameShiftY",
+   "scope": [
+    "genome"
+   ],
+   "category": "chr_name",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "染色体名垂直偏移",
+   "label_en": "Chr name shift Y",
+   "desc_zh": "染色体名垂直微调(px)，可与 .len 行内属性叠加。",
+   "desc_en": "Vertical nudge (px); additive with per-row values.",
+   "plot_types": []
+  },
+  {
+   "name": "ChrNameRotate",
+   "scope": [
+    "genome"
+   ],
+   "category": "chr_name",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "染色体名旋转",
+   "label_en": "Chr name rotation",
+   "desc_zh": "在 RotateChr 基础上追加的名称旋转角度。",
+   "desc_en": "Extra rotation added on top of RotateChr.",
+   "plot_types": []
+  },
+  {
+   "name": "ShowCoordinates",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 2,
+   "type": "bool",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "显示坐标轴",
+   "label_en": "Show coordinate axis",
+   "desc_zh": "该基因组是否绘制坐标刻度与标签。",
+   "desc_en": "Draw the coordinate scale for this genome.",
+   "plot_types": []
+  },
+  {
+   "name": "ScaleNum",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 1,
+   "type": "int",
+   "choices": null,
+   "min": 1,
+   "max": null,
+   "default": 10,
+   "label_zh": "刻度份数",
+   "label_en": "Scale divisions",
+   "desc_zh": "坐标轴刻度分割份数（0..N 共 N+1 个刻度）。",
+   "desc_en": "Number of axis tick divisions (N+1 ticks).",
+   "plot_types": []
+  },
+  {
+   "name": "ScaleUpDown",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 1,
+   "type": "enum",
+   "choices": [
+    "Up"
+   ],
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "坐标轴位置",
+   "label_en": "Axis side",
+   "desc_zh": "引擎只识别 “Up”（刻度画在染色体上方）；不设置时：基因组1默认上方，其余默认下方。",
+   "desc_en": "The engine only recognises \"Up\" (ticks above the bar); unset = above for genome 1, below otherwise.",
+   "plot_types": []
+  },
+  {
+   "name": "ScaleUnit",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 1,
+   "type": "int",
+   "choices": null,
+   "min": 1,
+   "max": null,
+   "default": null,
+   "label_zh": "刻度单位(bp)",
+   "label_en": "Scale unit (bp)",
+   "desc_zh": "目标刻度间距(bp)。推导出的份数必须在 2..100 之间，否则引擎回退到 ScaleNum。",
+   "desc_en": "Target tick spacing in bp; the derived count must land in 2..100 or the engine falls back to ScaleNum.",
+   "plot_types": []
+  },
+  {
+   "name": "LabelUnit",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 1,
+   "type": "text",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "坐标单位标签",
+   "label_en": "Label unit",
+   "desc_zh": "坐标后缀。默认按长度自动选 M / K / b，也可自定义字符串。",
+   "desc_en": "Axis suffix. Auto M/K/b by default, or any custom string.",
+   "plot_types": []
+  },
+  {
+   "name": "LablefontsizeRatio",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "坐标字号比例",
+   "label_en": "Axis font ratio",
+   "desc_zh": "坐标标签字号 = 比例 × font-size。注意拼写是引擎历史拼写 Lable。",
+   "desc_en": "Axis label font = ratio × font-size. Note the engine's 'Lable' spelling.",
+   "plot_types": []
+  },
+  {
+   "name": "LablePrecision",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 0,
+   "type": "int",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 1,
+   "label_zh": "坐标小数位数",
+   "label_en": "Axis decimals",
+   "desc_zh": "坐标标签保留的小数位数（默认 1）。未写入官方文档但引擎真实读取。",
+   "desc_en": "Decimal places in axis labels (default 1). Real but undocumented in the manual.",
+   "plot_types": []
+  },
+  {
+   "name": "RotateAxisText",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "坐标文字旋转",
+   "label_en": "Axis text rotation",
+   "desc_zh": "在 RotateChr 基础上追加的坐标文字旋转角度。",
+   "desc_en": "Extra rotation of the axis text on top of RotateChr.",
+   "plot_types": []
+  },
+  {
+   "name": "NoShowLabel",
+   "scope": [
+    "genome"
+   ],
+   "category": "axis",
+   "old_names": [],
+   "importance": 0,
+   "type": "bool",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "隐藏坐标数字",
+   "label_en": "Hide axis numbers",
+   "desc_zh": "只要该键存在即隐藏坐标数字（保留刻度线）。写 0 也会生效。",
+   "desc_en": "Hides the axis numbers whenever the key exists (ticks stay). Even 0 triggers it.",
+   "plot_types": [],
+   "presence_only": true
+  },
+  {
+   "name": "SpeRegionFile",
+   "scope": [
+    "genome"
+   ],
+   "category": "spe_region",
+   "old_names": [],
+   "importance": 2,
+   "type": "file",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "特殊区域文件",
+   "label_en": "Special region file",
+   "desc_zh": "高亮/注释区域文件（.gz 支持）。格式: chr start end [属性]。可对指定行加 SN=文字 或 CDS/UTR/mRNA 关键字改变样式。",
+   "desc_en": "Region highlight/annotation file (.gz ok). Format: chr start end [attrs]. Rows accept SN=text or CDS/UTR/mRNA keywords.",
+   "plot_types": []
+  },
+  {
+   "name": "ZoomRegion",
+   "scope": [
+    "genome"
+   ],
+   "category": "spe_region",
+   "old_names": [],
+   "importance": 2,
+   "type": "text",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "放大区域",
+   "label_en": "Zoom region",
+   "desc_zh": "只显示某条染色体的指定区间，格式 chr:start:end（如 Chr6:12914310:18879240），区域必须在该染色体范围内。",
+   "desc_en": "Show a single chromosome region chr:start:end (must lie inside that chromosome).",
+   "plot_types": []
+  },
+  {
+   "name": "SpeRegionWidthRatio",
+   "scope": [
+    "genome"
+   ],
+   "category": "spe_region",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "特殊区域高度比例",
+   "label_en": "Region height ratio",
+   "desc_zh": "特殊区域条相对染色体条半高的倍数；也可在区域文件行内用 SpeRegionWidthRatio= 设置（乘法叠加）。",
+   "desc_en": "Bar half-height multiplier for special regions; per-row values multiply.",
+   "plot_types": []
+  },
+  {
+   "name": "StyleUpDown",
+   "scope": [
+    "link"
+   ],
+   "category": "link",
+   "old_names": [],
+   "importance": 2,
+   "type": "enum",
+   "choices": [
+    "UpDown",
+    "DownUp",
+    "UpUp",
+    "DownDown",
+    "line"
+   ],
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "链接方向",
+   "label_en": "Link direction",
+   "desc_zh": "五种取值(区分大小写): UpDown/DownUp/UpUp/DownDown/line(直线)。不设置时按两个基因组的上下顺序自动选择曲线方向。",
+   "desc_en": "Case-sensitive: UpDown/DownUp/UpUp/DownDown/line. Unset = auto by genome order.",
+   "plot_types": []
+  },
+  {
+   "name": "lineType",
+   "scope": [
+    "link"
+   ],
+   "category": "link",
+   "old_names": [],
+   "importance": 1,
+   "type": "text",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "直线模式",
+   "label_en": "Line type",
+   "desc_zh": "写 line 表示直线（与 StyleUpDown=line 等效，优先级更高）。",
+   "desc_en": "\"line\" forces straight links (equivalent to StyleUpDown=line, higher priority).",
+   "plot_types": []
+  },
+  {
+   "name": "Reverse",
+   "scope": [
+    "link"
+   ],
+   "category": "link",
+   "old_names": [],
+   "importance": 2,
+   "type": "bool",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": "0",
+   "label_zh": "反向链接",
+   "label_en": "Reverse links",
+   "desc_zh": "交换链接在两条染色体上的起止附着点。",
+   "desc_en": "Swaps the start/end attachment points of the ribbon.",
+   "plot_types": []
+  },
+  {
+   "name": "HeightRatio",
+   "scope": [
+    "link"
+   ],
+   "category": "link",
+   "old_names": [
+    "HightRation"
+   ],
+   "importance": 2,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "链接高度比例",
+   "label_en": "Link height ratio",
+   "desc_zh": "链接带高度的放大/缩小比例，可为负（示例中使用 -1.5）。历史文档中的 HightRation 是无效拼写，GUI 会自动改写。",
+   "desc_en": "Scales the link band height; negative values are legal. The 'HightRation' typo in old docs is auto-corrected.",
+   "plot_types": []
+  },
+  {
+   "name": "OutsideWidthDeta",
+   "scope": [
+    "link"
+   ],
+   "category": "link",
+   "old_names": [],
+   "importance": 0,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": -2.0,
+   "label_zh": "链接外扩距离",
+   "label_en": "Outside width delta",
+   "desc_zh": "链接带与染色体条之间的间隙(px)，正值更远、负值更近（默认 -2）。",
+   "desc_en": "Gap between ribbon and chromosome bar (px); default -2.",
+   "plot_types": []
+  },
+  {
+   "name": "ShortLinkLineRefA",
+   "scope": [
+    "link"
+   ],
+   "category": "link",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "A端缩短量",
+   "label_en": "Shorten at RefA",
+   "desc_zh": "链接带在基因组A一侧的缩短量(px)，负值加长。",
+   "desc_en": "Shortens the ribbon at the RefA end (px); negative lengthens.",
+   "plot_types": []
+  },
+  {
+   "name": "ShortLinkLineRefB",
+   "scope": [
+    "link"
+   ],
+   "category": "link",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": 0.0,
+   "label_zh": "B端缩短量",
+   "label_en": "Shorten at RefB",
+   "desc_zh": "链接带在基因组B一侧的缩短量(px)，负值加长。",
+   "desc_en": "Shortens the ribbon at the RefB end (px); negative lengthens.",
+   "plot_types": []
+  },
+  {
+   "name": "fill",
+   "scope": [
+    "genome",
+    "link"
+   ],
+   "category": "style",
+   "old_names": [],
+   "importance": 2,
+   "type": "color",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "填充色",
+   "label_en": "Fill color",
+   "desc_zh": "基因组: 染色体条填充色；链接: 共线性带填充色（设置后覆盖调色板）。",
+   "desc_en": "Genome: chromosome bar fill; link: ribbon fill (overrides the palette).",
+   "plot_types": []
+  },
+  {
+   "name": "stroke",
+   "scope": [
+    "genome",
+    "link"
+   ],
+   "category": "style",
+   "old_names": [],
+   "importance": 2,
+   "type": "color",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": null,
+   "label_zh": "描边色",
+   "label_en": "Stroke color",
+   "desc_zh": "基因组: 染色体条描边；链接: 共线性带描边。",
+   "desc_en": "Genome: bar outline; link: ribbon outline.",
+   "plot_types": []
+  },
+  {
+   "name": "stroke-width",
+   "scope": [
+    "genome",
+    "link"
+   ],
+   "category": "style",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": 0,
+   "max": null,
+   "default": 1.0,
+   "label_zh": "描边宽度",
+   "label_en": "Stroke width",
+   "desc_zh": "描边线宽(px)，默认 1，0 表示无边框。",
+   "desc_en": "Outline width (px), default 1; 0 = no outline.",
+   "plot_types": []
+  },
+  {
+   "name": "stroke-opacity",
+   "scope": [
+    "genome",
+    "link"
+   ],
+   "category": "style",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": 0,
+   "max": 1,
+   "default": null,
+   "label_zh": "描边不透明度",
+   "label_en": "Stroke opacity",
+   "desc_zh": "0..1。基因组默认 1；链接默认 0.92。",
+   "desc_en": "0..1. Genome default 1; link default 0.92.",
+   "plot_types": []
+  },
+  {
+   "name": "fill-opacity",
+   "scope": [
+    "genome",
+    "link"
+   ],
+   "category": "style",
+   "old_names": [],
+   "importance": 1,
+   "type": "float",
+   "choices": null,
+   "min": 0,
+   "max": 1,
+   "default": null,
+   "label_zh": "填充不透明度",
+   "label_en": "Fill opacity",
+   "desc_zh": "0..1。基因组默认 1；链接默认 0.92。",
+   "desc_en": "0..1. Genome default 1; link default 0.92.",
+   "plot_types": []
+  },
+  {
+   "name": "GenomeColorBrewer",
+   "scope": [
+    "global"
+   ],
+   "category": "color",
+   "old_names": [],
+   "importance": 2,
+   "type": "enum",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": "Dark2",
+   "label_zh": "基因组调色板",
+   "label_en": "Genome palette",
+   "desc_zh": "染色体条配色，取自引擎内置 RColorBrewer（36 个）。未知名字会导致引擎除零崩溃。",
+   "desc_en": "Palette for chromosome bars (36 built-in RColorBrewer names). Unknown names crash the engine.",
+   "plot_types": []
+  },
+  {
+   "name": "ChrColorBrewer",
+   "scope": [
+    "global"
+   ],
+   "category": "color",
+   "old_names": [],
+   "importance": 2,
+   "type": "enum",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": "Paired",
+   "label_zh": "链接调色板",
+   "label_en": "Link palette",
+   "desc_zh": "共线性链接带配色（按染色体在 .len 中的行号循环取色，默认 Paired）。",
+   "desc_en": "Palette for link ribbons (indexed by chr row number; default Paired).",
+   "plot_types": []
+  },
+  {
+   "name": "SpeRegionColorBrewer",
+   "scope": [
+    "global"
+   ],
+   "category": "color",
+   "old_names": [],
+   "importance": 1,
+   "type": "enum",
+   "choices": null,
+   "min": null,
+   "max": null,
+   "default": "Dark2",
+   "label_zh": "特殊区域调色板",
+   "label_en": "Region palette",
+   "desc_zh": "特殊区域高亮配色（默认 Dark2）。",
+   "desc_en": "Palette for special-region highlights (default Dark2).",
+   "plot_types": []
+  }
+ ],
+ "validation": {
+  "in_meta_not_in_code": [],
+  "in_code_not_in_meta": [],
+  "dead_keys_confirmed": [
+   "genome.crBG",
+   "genome.crStrokeBG",
+   "global.ShiftXaxisY",
+   "global.fill",
+   "global.strokewidth"
+  ],
+  "palettes_without_colors": []
+ }
+}

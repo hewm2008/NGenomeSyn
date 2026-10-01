@@ -1,22 +1,22 @@
 
-# NGenomeSyn
+# <img src="doc/NGenomeSyn_logo.svg" width="15%" alt="NGenomeSyn logo">
 An easy-to-use and flexible tool for pretty visualization of syntenic relationships on any number of genomes
 
 ###  1 Introduction
 
-</br>    <p align="center"> ÖĞÎÄµÄreadmeÓĞ¿ÉÄÜÊÇ<b>ÀÏ°æ±¾µÄreadme</b>  ,¶ÔÓ¦×îĞÂµÄÊ¹ÓÃËµÃ÷Çë¼û¶ÔÓ¦°æ±¾ÀïÃæµÄ ÖĞÎÄµÄÊ¹ÓÃÊÖ²ápdf   £¬or Ö±½Ó²é¿´Ó¢ÎÄµÄreadme </p> </br>
+</br>    <p align="center"> ä¸­æ–‡çš„readmeæœ‰å¯èƒ½æ˜¯<b>è€ç‰ˆæœ¬çš„readme</b>  ,å¯¹åº”æœ€æ–°çš„ä½¿ç”¨è¯´æ˜è¯·è§å¯¹åº”ç‰ˆæœ¬é‡Œé¢çš„ ä¸­æ–‡çš„ä½¿ç”¨æ‰‹å†Œpdf   ï¼Œor ç›´æ¥æŸ¥çœ‹è‹±æ–‡çš„readme </p> </br>
 
-<b>NGenomeSyn</b> ÊÇÓÚ»ùÓÚ¶à¸ö»ùÒò×é¹²ÏßĞÔ¹ØÏµµÄ¿ÉÊÓ¹¤¾ß£¬¶Ô¶à¸ö»ùÒò×é×ÔÖ÷ÅÅÁĞÎ»ÖÃ£¬À©³¤ÊÕËõ£¬Ğı×ª½Ç¶È µÈ£¬½áºÏÑÕÉ«£¬´ïµ½¿ìËÙÒ»ÑÛ¿´³ö¹æÂÉ£¬Ê¶±ğ½á¹û¡£ ²¢ÇÒ¸÷ÖÖ¿ÉÒÔ×Ô¼º×éºÏ ×ÔÓÉĞŞ¸ÄÏà¹Ø²ÎÊı¡£
+<b>NGenomeSyn</b> æ˜¯äºåŸºäºå¤šä¸ªåŸºå› ç»„å…±çº¿æ€§å…³ç³»çš„å¯è§†å·¥å…·ï¼Œå¯¹å¤šä¸ªåŸºå› ç»„è‡ªä¸»æ’åˆ—ä½ç½®ï¼Œæ‰©é•¿æ”¶ç¼©ï¼Œæ—‹è½¬è§’åº¦ ç­‰ï¼Œç»“åˆé¢œè‰²ï¼Œè¾¾åˆ°å¿«é€Ÿä¸€çœ¼çœ‹å‡ºè§„å¾‹ï¼Œè¯†åˆ«ç»“æœã€‚ å¹¶ä¸”å„ç§å¯ä»¥è‡ªå·±ç»„åˆ è‡ªç”±ä¿®æ”¹ç›¸å…³å‚æ•°ã€‚
 </br>
-</br>ÁÁµã£º
-</br>1  ÈÎÒâ¶à¸ö»ùÒò×é(Ä¿Ç°ÎÒÏŞ20¸ö£¬¿ÉÒÔÈ¡Ïû)
-</br>2  ¸÷¸ö»ùÒò×é¿ÉÒÔ×Ô¼ºµ÷Ë³Ğò ÑÕÉ«µÈµÈÊôĞÔ
-</br>3  ¸÷¸ö»ùÒò×é¿ÉÒÔÒÆ¶¯ Ğı×ª À©³¤ºÍÊÕËõµÈ
-</br>4  ZoomRegion¹¦ÄÜ£¬¿ÉÒÔÖ¸¶¨·Å´óÄ³Ò»¸öÇøÓò
+</br>äº®ç‚¹ï¼š
+</br>1  ä»»æ„å¤šä¸ªåŸºå› ç»„(ç›®å‰æˆ‘é™20ä¸ªï¼Œå¯ä»¥å–æ¶ˆ)
+</br>2  å„ä¸ªåŸºå› ç»„å¯ä»¥è‡ªå·±è°ƒé¡ºåº é¢œè‰²ç­‰ç­‰å±æ€§
+</br>3  å„ä¸ªåŸºå› ç»„å¯ä»¥ç§»åŠ¨ æ—‹è½¬ æ‰©é•¿å’Œæ”¶ç¼©ç­‰
+</br>4  ZoomRegionåŠŸèƒ½ï¼Œå¯ä»¥æŒ‡å®šæ”¾å¤§æŸä¸€ä¸ªåŒºåŸŸ
 </br>
-</br>ÆäÖĞ3  ¿ÉÒÔµ÷ºÃÏà¹Ø²ÎÊı ¿ÉÒÔ³öÏÖ Èı½ÇĞÎ  Îå½ÇĞÎ  ËÄ±ßĞÎ µÈµÈ×éºÏ£¨ºóÃæ½«ÓĞ¿ÕÉı×éµ÷¶¨ÕâĞ©²ÎÊı£©
+</br>å…¶ä¸­3  å¯ä»¥è°ƒå¥½ç›¸å…³å‚æ•° å¯ä»¥å‡ºç° ä¸‰è§’å½¢  äº”è§’å½¢  å››è¾¹å½¢ ç­‰ç­‰ç»„åˆï¼ˆåé¢å°†æœ‰ç©ºå‡ç»„è°ƒå®šè¿™äº›å‚æ•°ï¼‰
 
-</br>³ÌĞòÊÇ¸øÒ»Ğ©ÓĞ»ù´¡µÄÉúĞÅÅóÓÑÓÃµÄ£¬ÈôÊÇĞ¡°×¿´²»¶®¾ÍËãÁË¡£
+</br>ç¨‹åºæ˜¯ç»™ä¸€äº›æœ‰åŸºç¡€çš„ç”Ÿä¿¡æœ‹å‹ç”¨çš„ï¼Œè‹¥æ˜¯å°ç™½çœ‹ä¸æ‡‚å°±ç®—äº†ã€‚
 </br>
 </br><b>NGenomeSyn</b> ,It is a visual tool based on the collinear relationship of multiple genomes, which independently arranges the positions, expansion and contraction, rotation angles, etc. of multiple genomes, combined with colors, to quickly see the rules and identify the results at a glance. And various can be combined by themselves to freely modify the relevant parameters
 
@@ -26,26 +26,70 @@ An easy-to-use and flexible tool for pretty visualization of syntenic relationsh
 The <b>new version</b> will be updated and maintained in <b>[hewm2008/NGenomeSyn](https://github.com/hewm2008/NGenomeSyn)</b>, please click below website to download the latest version
 </br><p align="center"><b>[hewm2008/NGenomeSyn](https://github.com/hewm2008/NGenomeSyn)</b></p>
 
-<b> 2.1. linux/MaxOS&nbsp;&nbsp;&nbsp;   [Download](https://github.com/hewm2008/NGenomeSyn/archive/v1.43.tar.gz)</b>
+<b> 2.1. Linux / macOS / Windows&nbsp;&nbsp;&nbsp;   [Download v1.50](https://github.com/hewm2008/NGenomeSyn/archive/v1.50.tar.gz)</b>
+  </br> Windows ç”¨æˆ·å¯ç›´æ¥ä½¿ç”¨å›¾å½¢ç•Œé¢ï¼ˆGUIï¼‰ï¼Œéœ€å®‰è£… [Perl](https://strawberryperl.com/) å’Œ [Python 3](https://www.python.org/)ã€‚
   
   </br> <b>2.2 Pre-install</b>
-  </br> NGenomeSyn is for Linux/Unix/macOS. Before installing,please make sure the following pre-requirements are ready to use.
+  </br> å‘½ä»¤è¡Œæ¨¡å¼é¢å‘ Linux/Unix/macOSï¼Œå›¾å½¢ç•Œé¢ï¼ˆGUIï¼‰å¦æ”¯æŒ Windowsã€‚å®‰è£…å‰è¯·ç¡®è®¤å·²å…·å¤‡ä»¥ä¸‹ä¾èµ–ã€‚
   </br> 1) [Perl](https://www.perl.org/) with the [SVG.pm](https://metacpan.org/release/SVG) in Perl should be installed. SVG is not necessary,We have provided a built-in SVG module in the package.
-  </br> 2) [convert](https://linux.die.net/man/1/convert) command is recommended to be pre-installed, although it is not required
+  </br> 2) [convert](https://linux.die.net/man/1/convert) å‘½ä»¤å»ºè®®é¢„è£…ï¼Œä½†ä¸æ˜¯å¿…éœ€çš„ï¼ˆä»…å‘½ä»¤è¡Œæ¨¡å¼ä½¿ç”¨ svg è½¬ png æ—¶éœ€è¦ï¼›GUI è‡ªè¡Œæ¸²æŸ“ PNG ä¸ PDFï¼‰
+  </br> 3) å›¾å½¢ç•Œé¢éœ€è¦ [Python 3](https://www.python.org/) ä¸ [PySide6](https://pypi.org/project/PySide6/)ã€‚ä¸‹æ–¹å¯åŠ¨è„šæœ¬ä¼šåœ¨é¦–æ¬¡è¿è¡Œæ—¶è‡ªåŠ¨å®‰è£… PySide6ï¼ˆå¤±è´¥æ—¶ä¾æ¬¡å°è¯• `--user` ä¸é•œåƒæºï¼‰ï¼›è‹¥è‡ªè¡Œæ‰§è¡Œ `python gui/main.py`ï¼Œè¯·å…ˆæ‰‹åŠ¨è¿è¡Œä¸€æ¬¡ `pip install PySide6`ã€‚
 
 </br> <b>2.3 Install</b>
-</br> Users can install it with the following commands:
+</br> <b>å‘½ä»¤è¡Œæ¨¡å¼ï¼ˆCLIï¼‰ï¼š</b>
 <pre>
         git clone https://github.com/hewm2008/NGenomeSyn.git
         cd NGenomeSyn;	chmod 755 -R bin/*
         ./bin/NGenomeSyn  -h 
 </pre>
+  </br> <b>å›¾å½¢ç•Œé¢æ¨¡å¼ï¼ˆGUIï¼‰ï¼š</b>
+<pre>
+        # Linux / macOS
+        sh NGenomeSynGUI.sh
+        # Windows
+        åŒå‡» NGenomeSynGUI.bat     ## æˆ–ï¼špython gui\main.py
+</pre>
+  </br> GUI ä»éœ€ Perl æ¥è¿è¡Œå¼•æ“ï¼Œä¸å‘½ä»¤è¡Œæ¨¡å¼ç›¸åŒã€‚Windows ç”¨æˆ·å¯å®‰è£…
+  [Strawberry Perl](https://strawberryperl.com/)ï¼Œæˆ–è§£å‹ä¾¿æºç‰ˆä½¿
+  <code>gui_runtime/perl/perl/bin/perl.exe</code> å­˜åœ¨ã€‚è¯¦è§ç¬¬ 7 èŠ‚å›¾å½¢ç•Œé¢è¯´æ˜ã€‚
 
 
-###  3 Parameter description
+###  3 å›¾å½¢ç•Œé¢ GUI
+
+<img src="gui/doc/GUI_Home.png" width="80%" alt="NGenomeSyn GUI">
+
+NGenomeSyn æä¾›è·¨å¹³å°å›¾å½¢ç•Œé¢ï¼ˆWindows / Linux / macOSï¼‰ï¼Œé©±åŠ¨çš„æ˜¯**æœªç»ä¿®æ”¹çš„åŸç‰ˆ Perl å¼•æ“**ï¼Œ
+å‘½ä»¤è¡Œèƒ½å‡ºçš„å›¾ï¼Œå›¾å½¢ç•Œé¢åŒæ ·èƒ½å‡ºï¼Œåªæ˜¯å‚æ•°æ”¹ä¸ºå¯è§†åŒ–é…ç½®ã€‚
+
+- **å·¦ä¾§**ï¼šä¸Šä¸‹ä¸¤ä¸ªæœ‰åºæ•°æ®åˆ—è¡¨ â€”â€” åŸºå› ç»„ `GenomeInfoFile1..N` ä¸é“¾æ¥
+  `LinkFileRefA VsRefB`ï¼ˆé“¾æ¥ç”¨ `A:`/`B:` ä¸‹æ‹‰æŒ‡å®šè¿æ¥å“ªä¸¤ä¸ªåŸºå› ç»„ï¼‰ã€‚
+  ç‚¹å‡»ä»»ä¸€è¡Œå³å¯é¢„è§ˆè¯¥æ–‡ä»¶å‰ 8 è¡Œï¼Œé€‰ä¸­æ€ä¸å³æ åŒæ­¥ã€‚
+- **ä¸­é—´**ï¼šSVG å®æ—¶é¢„è§ˆï¼Œæ»šè½®ç¼©æ”¾ã€æ‹–æ‹½å¹³ç§»ï¼Œå¯¼å‡º SVG / é«˜åˆ†è¾¨ç‡ PNG / PDFã€‚
+- **å³ä¾§**ï¼šå‚æ•°é¡µç­¾ `å…¨å±€å‚æ•° Â· GenomeALL Â· Genome 1..N Â· LinkALL Â· Link 1..M Â· å‚æ•°æ€»è§ˆ`ï¼Œ
+  æŒ‰ 10 ä¸ªåˆ†ç±»æµè§ˆã€‚
+
+äº®ç‚¹ï¼š
+- **66 ä¸ªå‚æ•°**ï¼Œå‡æ ‡æ³¨å¼•æ“çœŸå®é»˜è®¤å€¼ä¸å–å€¼èŒƒå›´ï¼ˆç”± Perl æºç äº¤å‰æ ¡éªŒå¾—å‡ºï¼‰ï¼Œ
+  å…¶ä¸­ **17 ä¸ªå¼•æ“çœŸå®è¯»å–ä½†å®˜æ–¹æ–‡æ¡£ä»æœªæåŠ**ï¼›
+- **35 ä¸ªå†…ç½® RColorBrewer è°ƒè‰²æ¿**ï¼Œè‰²æ¡é¢„è§ˆåå†é€‰ï¼›
+- **ä¸­è‹±åŒè¯­**ç•Œé¢ï¼Œè·Ÿéšç³»ç»Ÿæ·±è‰²/æµ…è‰²ä¸»é¢˜ã€‚
+
+è¿è¡Œæ–¹å¼ï¼ˆæ— éœ€å‘½ä»¤è¡Œï¼‰ï¼š
+
+    Linux/macOS:  ./NGenomeSynGUI.sh        ï¼ˆéœ€è¦ python3ï¼›PySide6 é¦–æ¬¡è¿è¡Œè‡ªåŠ¨å®‰è£…ï¼‰
+    Windows:      NGenomeSynGUI.bat        ï¼ˆåŒå‡»å³å¯ï¼‰
+
+æ‰‹å†Œï¼š
+- [ä¸­æ–‡ GUI æ‰‹å†Œ](gui/doc/NGenomeSyn_GUI_manual_Chinese.pdf)
+- [English GUI Manual](gui/doc/NGenomeSyn_GUI_manual_English.pdf)
+
+è¯¦è§ [gui/README.md](gui/README.md)ï¼ˆå«å¼•æ“è¯´æ˜ä¸æ‰“åŒ…æ–¹å¼ï¼‰ã€‚
+
+
+###  4 Parameter description
 ------------
-</br><b>3.1 NGenomeSyn</b>
-</br><b>3.1.1 Main parameter</b>
+</br><b>4.1 NGenomeSyn</b>
+</br><b>4.1.1 Main parameter</b>
 
 ```php
         Usage: NGenomeSyn  -InConf  in.cofi -OutPut OUT
@@ -54,41 +98,41 @@ The <b>new version</b> will be updated and maintained in <b>[hewm2008/NGenomeSyn
                 -OutPut      <s> : OutPut svg file result
 
                 -help              See more help *Manual.pdf
-                                   [hewm2008 v1.43]
+                                   [hewm2008 v1.50]
 
 ```
 </br> brief description for function:
 <pre>
-	   # ÓÃ·¨ºÍcircosÏàËÆ£¬Ö÷ÒªÒ»¸öÅäÖÃÎÄ¼şÒ»Ñù,¾ßÌå¼ûpdf£¬¼òÒª¹¦ÄÜ½éÉÜÈçÏÂ
-	1  ÈÎÒâ¶à¸ö»ùÒò×é£¨Ä¿Ç°ÎÒÏŞ12¸ö£¬¿ÉÒÔÈ¡Ïû£©
-	2  ¸÷¸ö»ùÒò×é¿ÉÒÔ×Ô¼ºµ÷Ë³Ğò ÑÕÉ«µÈµÈÊôĞÔ
-	3  ¸÷¸ö»ùÒò×é¿ÉÒÔÒÆ¶¯ Ğı×ª À©³¤ºÍÊÕËõµÈ
+	   # ç”¨æ³•å’Œcircosç›¸ä¼¼ï¼Œä¸»è¦ä¸€ä¸ªé…ç½®æ–‡ä»¶ä¸€æ ·,å…·ä½“è§pdfï¼Œç®€è¦åŠŸèƒ½ä»‹ç»å¦‚ä¸‹
+	1  ä»»æ„å¤šä¸ªåŸºå› ç»„ï¼ˆç›®å‰æˆ‘é™12ä¸ªï¼Œå¯ä»¥å–æ¶ˆï¼‰
+	2  å„ä¸ªåŸºå› ç»„å¯ä»¥è‡ªå·±è°ƒé¡ºåº é¢œè‰²ç­‰ç­‰å±æ€§
+	3  å„ä¸ªåŸºå› ç»„å¯ä»¥ç§»åŠ¨ æ—‹è½¬ æ‰©é•¿å’Œæ”¶ç¼©ç­‰
 	
-	ÆäÖĞ3  ¿ÉÒÔµ÷ºÃÏà¹Ø²ÎÊı ¿ÉÒÔ³öÏÖ Èı½ÇĞÎ  Îå½ÇĞÎ  ËÄ±ßĞÎ µÈµÈ×éºÏ£¨ºóÃæ½«ÓĞ¿ÕÉı×éµ÷¶¨ÕâĞ©²ÎÊı£©
-	   ¸ü¶à[GetTwoGenomeSyn.pl](https://zhuanlan.zhihu.com/p/515695482)²ÎÊı
+	å…¶ä¸­3  å¯ä»¥è°ƒå¥½ç›¸å…³å‚æ•° å¯ä»¥å‡ºç° ä¸‰è§’å½¢  äº”è§’å½¢  å››è¾¹å½¢ ç­‰ç­‰ç»„åˆï¼ˆåé¢å°†æœ‰ç©ºå‡ç»„è°ƒå®šè¿™äº›å‚æ•°ï¼‰
+	   æ›´å¤š[GetTwoGenomeSyn.pl](https://zhuanlan.zhihu.com/p/515695482)å‚æ•°
 </pre>
 
-</br><b>3.1.2 Other parameters</b>
+</br><b>4.1.2 Other parameters</b>
 ```php
-     ÊäÈëÎÄ¼ş»ùÒò×é¸ñÊ½¼û  pdf.Ö÷ÒªÎªchr start end µÈÆäËüÊôĞÔ µÄ¸ñÊ½
-     ÊäÈëlink¼ş»ùÒò×é¸ñÊ½¼û  pdf.Ö÷ÒªÎªchrA  startA enda chrB startB endB   µÈµÈÆäËüÊôĞÔ µÄ¸ñÊ½
+     è¾“å…¥æ–‡ä»¶åŸºå› ç»„æ ¼å¼è§  pdf.ä¸»è¦ä¸ºchr start end ç­‰å…¶å®ƒå±æ€§ çš„æ ¼å¼
+     è¾“å…¥linkä»¶åŸºå› ç»„æ ¼å¼è§  pdf.ä¸»è¦ä¸ºchrA  startA enda chrB startB endB   ç­‰ç­‰å…¶å®ƒå±æ€§ çš„æ ¼å¼
 
 ```
 
-</br><b>3.2.2 Detail parameters</b>
+</br><b>4.2.2 Detail parameters</b>
 ```php
-	#  ¾ßÌå¼ûpdf
-##################################### È«¾Ö²ÎÊı #######################################################
+	#  å…·ä½“è§pdf
+##################################### å…¨å±€å‚æ•° #######################################################
 SetParaFor = global
 GenomeInfoFile1=RefA.len
-###### Format (chr Start End ...ÆäËüÊôĞÔ)  chrË³ĞòºÍÕâÎÄ¼şÒ»ÖÂ ÈôÊÇEnd Start ÔòÕâÌõchr·´Ïò»¥²¹
-##  ÆäËüÊôĞÔ Èçfill=red stroke-width=0  stroke=black stroke-opacity=1 fill-opacity=1 µÈµÈ¿ÉÒÔ²»Í¬ĞĞ²»Í¬ÊôĞÔ
-GenomeInfoFile2=RefB.len  ##  GenomeInfoFile X  ¾Í±íÊ¾ÓĞ X¸ö»ùÒò×é
+###### Format (chr Start End ...å…¶å®ƒå±æ€§)  chré¡ºåºå’Œè¿™æ–‡ä»¶ä¸€è‡´ è‹¥æ˜¯End Start åˆ™è¿™æ¡chråå‘äº’è¡¥
+##  å…¶å®ƒå±æ€§ å¦‚fill=red stroke-width=0  stroke=black stroke-opacity=1 fill-opacity=1 ç­‰ç­‰å¯ä»¥ä¸åŒè¡Œä¸åŒå±æ€§
+GenomeInfoFile2=RefB.len  ##  GenomeInfoFile X  å°±è¡¨ç¤ºæœ‰ Xä¸ªåŸºå› ç»„
 
 LinkFileRef1VsRef2=RefA_RefB.link  
 
-####### Format (chrA StartA EndA chrB StartB End ...ÆäËüÊôĞÔ)
-#  ¿ÉÒÔ¶à´ÎRef1VsRef2   LinkFileRef2VsRef1 µÈ
+####### Format (chrA StartA EndA chrB StartB End ...å…¶å®ƒå±æ€§)
+#  å¯ä»¥å¤šæ¬¡Ref1VsRef2   LinkFileRef2VsRef1 ç­‰
 
 
 ##Main = "main_Figure"  ##  the Fig Name  :MainRatioFontSize MainCor ShiftMainX  ShiftMainY 
@@ -96,62 +140,62 @@ LinkFileRef1VsRef2=RefA_RefB.link
 
 ################################ Figure ############################################################
 
-##############################     »­²¼ ºÍ Í¼Æ¬ ²ÎÊıÅäÖÃ #################################
-#body=1200   ##   Ä¬ÈÏÊÇ1200£¬Ö÷»­²¼´óĞ¡ÉèÖÃ  ÁíÍâ£ºup/down/left/right) = (55,25,100,120); #CanvasHeightRitao=1.0 CanvasWidthRitao=1.0
-##RotatePng   = 0  ##  ¶ÔFigure½øĞĞĞı×ªµÄ½Ç¶È
+##############################     ç”»å¸ƒ å’Œ å›¾ç‰‡ å‚æ•°é…ç½® #################################
+#body=1200   ##   é»˜è®¤æ˜¯1200ï¼Œä¸»ç”»å¸ƒå¤§å°è®¾ç½®  å¦å¤–ï¼šup/down/left/right) = (55,25,100,120); #CanvasHeightRitao=1.0 CanvasWidthRitao=1.0
+##RotatePng   = 0  ##  å¯¹Figureè¿›è¡Œæ—‹è½¬çš„è§’åº¦
 
-SetParaFor = Genome1  #  GenomeALL/GenomeX  XµÚX¸ö»ùÒò×é
+SetParaFor = Genome1  #  GenomeALL/GenomeX  Xç¬¬Xä¸ªåŸºå› ç»„
 
-#ZoomChr=1.0          ## chr³¤¶È µÈ´ó ËõĞ¡ or À©´ó
-#RotateChr=30         ## chrµÄÆğµã Ë³Ê±Õë Ğı×ª  xx ¶È
+#ZoomChr=1.0          ## chré•¿åº¦ ç­‰å¤§ ç¼©å° or æ‰©å¤§
+#RotateChr=30         ## chrçš„èµ·ç‚¹ é¡ºæ—¶é’ˆ æ—‹è½¬  xx åº¦
 #ShiftX=0
-#ShiftY=0             ##¶ÔÕâ¸ö»ùÒò×éÒÆ¶¯,Ò²¿ÉÒÔÖ±½ÓÓÃMoveToX MoveToY 
+#ShiftY=0             ##å¯¹è¿™ä¸ªåŸºå› ç»„ç§»åŠ¨,ä¹Ÿå¯ä»¥ç›´æ¥ç”¨MoveToX MoveToY 
 
-#ChrWidth=20          ## Õâ¸ö»ùÒò×échrµÄÔÚ»­²¼µÄ¿í¶È
-#LinkWidth=180        ## Õâ¸ö»ùÒò×éºÍÏÂÒ»¸ölinkµÄ¸ß¶È
-#ChrSpacing=10        ## Õâ¸ö»ùÒò×échrÖ®¼äµÄ¿ÕÏ¶
-#NormalizedScale=0    ## ÓÃ×Ô¼ºµÄ±ê³ß  Ïàµ±¸Ã»ùÒò×éÓëÄ¬ÈÏµÄ»ùÒò×éÊÇ·ñµÈ³¤
+#ChrWidth=20          ## è¿™ä¸ªåŸºå› ç»„chrçš„åœ¨ç”»å¸ƒçš„å®½åº¦
+#LinkWidth=180        ## è¿™ä¸ªåŸºå› ç»„å’Œä¸‹ä¸€ä¸ªlinkçš„é«˜åº¦
+#ChrSpacing=10        ## è¿™ä¸ªåŸºå› ç»„chrä¹‹é—´çš„ç©ºéš™
+#NormalizedScale=0    ## ç”¨è‡ªå·±çš„æ ‡å°º  ç›¸å½“è¯¥åŸºå› ç»„ä¸é»˜è®¤çš„åŸºå› ç»„æ˜¯å¦ç­‰é•¿
 
-#SpeRegionFile=        ## ÎÄ¼ş,±í¼ÇÌØ±ğÇøÓò[¸ñÊ½chr start End £¨xx=yy¼ÓÊôĞÔµÈ]
+#SpeRegionFile=        ## æ–‡ä»¶,è¡¨è®°ç‰¹åˆ«åŒºåŸŸ[æ ¼å¼chr start End ï¼ˆxx=yyåŠ å±æ€§ç­‰]
 #ZoomRegion           ## Zoom the specific Region,format (ZoomRegion=chr2:1000:5000)
 
-##ÆäËüµ±ºÜÉÙÓÃµ½µÄ²ÎÊı EndCurveRadian=3/ µÈµÈ
+##å…¶å®ƒå½“å¾ˆå°‘ç”¨åˆ°çš„å‚æ•° EndCurveRadian=3/ ç­‰ç­‰
 ## GenomeNameRatio GenomeName
-## åæ ‡æ˜¾ç¤ºç›¸å…³ ShowCoordinates=1     ## Show Coordinates . with other para [ScaleNum=10 ScaleUpDown ScaleUnit LabelUnit  LablefontsizeRatio  RotateAxisText NoShowLabel ]
+## é§æ„­çˆ£é„å‰§ãšé©ç¨¿å§ ShowCoordinates=1     ## Show Coordinates . with other para [ScaleNum=10 ScaleUpDown ScaleUnit LabelUnit  LablefontsizeRatio  RotateAxisText NoShowLabel ]
 
-SetParaFor = Genome2  #  GenomeX  XµÚX¸ö»ùÒò×é
+SetParaFor = Genome2  #  GenomeX  Xç¬¬Xä¸ªåŸºå› ç»„
 
 
-SetParaFor=Link1  #  ¶ÔµÚX¸ö Link X  File ½øĞĞÉèÖÃ LinkALL :¶ÔËùÓĞlinkÆğ×÷ÓÃ
-#StyleUpDown=           ## UpDown  DownUp  UpUP DownDown line  ÎåÖÖĞÎÊ½  lineÎªÖ±Ïß
-#Reverse=1              ## ·´Ïòlink
-#HeightRatio=1.0        ## linksµÄ¸ß±ÈÀı  À©´óorËõĞ¡
-####  fill/ stroke/stroke-opacity/fill-opacity/stroke-width   ¿ÉÉè
+SetParaFor=Link1  #  å¯¹ç¬¬Xä¸ª Link X  File è¿›è¡Œè®¾ç½® LinkALL :å¯¹æ‰€æœ‰linkèµ·ä½œç”¨
+#StyleUpDown=           ## UpDown  DownUp  UpUP DownDown line  äº”ç§å½¢å¼  lineä¸ºç›´çº¿
+#Reverse=1              ## åå‘link
+#HeightRatio=1.0        ## linksçš„é«˜æ¯”ä¾‹  æ‰©å¤§orç¼©å°
+####  fill/ stroke/stroke-opacity/fill-opacity/stroke-width   å¯è®¾
 
-....  #µÈµÈ
+....  #ç­‰ç­‰
 
 
 ```
 
-</br><b>3.3 Output files</b>
+</br><b>4.3 Output files</b>
 <pre>
 out.svg: Output plot in SVG format
 out.png: Output plot in png format
 </pre>
 
 
-###  4 Examples
+###  5 Examples
 ------------
 
 </br>See more detailed usage in the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>[Chinese Documentation](https://github.com/hewm2008/NGenomeSyn/blob/main/NGenomeSyn_manual_Chinese.pdf)</b>
 </br>See more detailed usage in the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>[English Documentation](https://github.com/hewm2008/NGenomeSyn/blob/main/NGenomeSyn_manual_English.pdf)</b>
 </br>See the example directory and  Manual.pdf for more detail.
-</br>¾ßÌå¼ûÕâ¶ù  Manual.pdf for more detail ÀïÃæµÄÊµÀıºÍÅäÖÃ£¬ºóÆÚ½«ÔÚÄ³Ğ©ÍøÖ·ÊÍ·ÅÒ»Ğ©½Ì³Ì
+</br>å…·ä½“è§è¿™å„¿  Manual.pdf for more detail é‡Œé¢çš„å®ä¾‹å’Œé…ç½®ï¼ŒåæœŸå°†åœ¨æŸäº›ç½‘å€é‡Šæ”¾ä¸€äº›æ•™ç¨‹
 </br></br> 
 ../../bin/NGenomeSyn       -InConf        in.cofi -OutPut OUT
-</br>  Ä¿Â¼  <b> [[Example/example\*/](https://github.com/hewm2008/NGenomeSyn/tree/main/Example)] </b>¡¡ÀïÃæÓĞÊäÈëºÍÊä³öºÍ½Å±¾ÓÃ·¨¡£
+</br>  ç›®å½•  <b> [[Example/example\*/](https://github.com/hewm2008/NGenomeSyn/tree/main/Example)] </b>ã€€é‡Œé¢æœ‰è¾“å…¥å’Œè¾“å‡ºå’Œè„šæœ¬ç”¨æ³•ã€‚
 
-</br> ÈçÏÂÌá¹©ÁË6¸öÊµÀı£¬¾ùÓÃµ½ÕæÕıµÄÊı¾İ×÷µÄÍ¼¡£
+</br> å¦‚ä¸‹æä¾›äº†6ä¸ªå®ä¾‹ï¼Œå‡ç”¨åˆ°çœŸæ­£çš„æ•°æ®ä½œçš„å›¾ã€‚
 
 
 |  <b>Example</b>               |                                                 <b>Description</b>                                                |
@@ -166,40 +210,40 @@ out.png: Output plot in png format
 
 </br>
 
-ËùÓĞ²âÊÔÊı¾İ¾ùÀ´×ÔÕæÊµÊı¾İ£¬ÎÒÃÇ½«Æä·ÅÔÚ[[Example/RealData](https://github.com/hewm2008/NGenomeSyn/tree/main/Example/RealData)]Ä¿Â¼ÏÂ£¬²¢ÇÒ
-ÎÄ¼ş (00.ReadMe)jÀïÃæÓĞÁĞµ½Êı¾İµÄ ÏÂÔØµÄURL
+æ‰€æœ‰æµ‹è¯•æ•°æ®å‡æ¥è‡ªçœŸå®æ•°æ®ï¼Œæˆ‘ä»¬å°†å…¶æ”¾åœ¨[[Example/RealData](https://github.com/hewm2008/NGenomeSyn/tree/main/Example/RealData)]ç›®å½•ä¸‹ï¼Œå¹¶ä¸”
+æ–‡ä»¶ (00.ReadMe)jé‡Œé¢æœ‰åˆ—åˆ°æ•°æ®çš„ ä¸‹è½½çš„URL
 
 
-* Example 1)Á½¸ö»ùÒò×éÄ¬ÈÏ
-×î¼òÒ×£¬Ä¬ÈÏ¾ÓÖĞ¡£  run2.shÀïÃæÓĞÁ÷³Ì 
+* Example 1)ä¸¤ä¸ªåŸºå› ç»„é»˜è®¤
+æœ€ç®€æ˜“ï¼Œé»˜è®¤å±…ä¸­ã€‚  run2.shé‡Œé¢æœ‰æµç¨‹ 
 ![Minimap2.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example1/Minimap2.png)
 ![MCScanX.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example1/MCScanX.png)
 
-* Example 2) Èı¸ö(N¸ö)»ùÒò×éÄ¬ÈÏ 
+* Example 2) ä¸‰ä¸ª(Nä¸ª)åŸºå› ç»„é»˜è®¤ 
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example2/OUT1.png)
 
-* Example 2)Èı¸ö(N¸ö)»ùÒò×éÄ¬ÈÏ  ÅÅÁĞ Ğı×ªµÈ
-Ğı×ª µÚÈı¸ö»ùÒò×é
+* Example 2)ä¸‰ä¸ª(Nä¸ª)åŸºå› ç»„é»˜è®¤  æ’åˆ— æ—‹è½¬ç­‰
+æ—‹è½¬ ç¬¬ä¸‰ä¸ªåŸºå› ç»„
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example2/OUT2.png)
 
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example2/OUT3.png)
 
 
-* Example 3)Èı¸ö(N¸ö)»ùÒò×éÄ¬ÈÏ  ÅÅÁĞ Ğı×ªµÈ
-UpUp DownDownºÍÈı½ÇĞÍ×÷Í¼
+* Example 3)ä¸‰ä¸ª(Nä¸ª)åŸºå› ç»„é»˜è®¤  æ’åˆ— æ—‹è½¬ç­‰
+UpUp DownDownå’Œä¸‰è§’å‹ä½œå›¾
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example3/OUT1.png)
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example3/OUT3.png)
 
-* Example 4)  ÈÎÒâÅÅÁĞ
+* Example 4)  ä»»æ„æ’åˆ—
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example4/OUT.png)
-ÓĞÊı¾İ¿ÉÒÔ³öÏÂÍ¼
+æœ‰æ•°æ®å¯ä»¥å‡ºä¸‹å›¾
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example4/PMID34990066Fig2.png)
 
-* Example 5)  ¾Ö²¿»ùÒò½á¹¹¹²ÏßĞÔºÍZoomRegion¹¦ÄÜ
+* Example 5)  å±€éƒ¨åŸºå› ç»“æ„å…±çº¿æ€§å’ŒZoomRegionåŠŸèƒ½
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example5/OUT1.png)
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example5/OUT2.png)
 
-* Example 6) ·º»ùÒò×éÑ§Ñİ³£ÓÃ·ÖÎö£¬²é¿´Æ·ÖÖÖ®¼äµÄ²åÈëºÍÈ±Ê§£¬Ñ°ÕÒÉúÎïÒâÒå
+* Example 6) æ³›åŸºå› ç»„å­¦æ¼”å¸¸ç”¨åˆ†æï¼ŒæŸ¥çœ‹å“ç§ä¹‹é—´çš„æ’å…¥å’Œç¼ºå¤±ï¼Œå¯»æ‰¾ç”Ÿç‰©æ„ä¹‰
 ![out.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/example6/OUT.png)
 
 
@@ -208,25 +252,20 @@ UpUp DownDownºÍÈı½ÇĞÍ×÷Í¼
 ![realityData.png](https://github.com/hewm2008/NGenomeSyn/blob/main/Example/RealData/Other/realityData.png)
 
 
-###  5 Advantages
+###  6 Advantages
 
-</br>ËÙ¶È¿ì£¬ÉÙÄÚ´æ
-</br>¿ÉÒÔ×ÔÎÒ¶¨Òå×éºÏ¶à²ã´Î
-</br>ÓĞperl¼´¿ÉÒÔÔËĞĞ£¬Ãâ°²×°
+</br>é€Ÿåº¦å¿«ï¼Œå°‘å†…å­˜
+</br>å¯ä»¥è‡ªæˆ‘å®šä¹‰ç»„åˆå¤šå±‚æ¬¡
+</br>æœ‰perlå³å¯ä»¥è¿è¡Œï¼Œå…å®‰è£…
+</br>GUI v1.50
 
-
-###  6 An example image generated by NGenomeSyn.
-
-------------
-
-
-
-###  7 Discussing
+### 7 Discussing
 ------------
 - [:email:](https://github.com/hewm2008/NGenomeSyn) hewm2008@gmail.com / hewm2008@qq.com
 - join the<b><i> QQ Group : 125293663</b></i>
 
+### 8 Citation
+------------
+please cited this [article](https://doi.org/10.1093/bioinformatics/btad121) if possible
+</br>Weiming He, Jian Yang, Yi Jing, Lian Xu, Kang Yu, Xiaodong Fang, NGenomeSyn: an easy-to-use and flexible tool for publication-ready visualization of syntenic relationships across multiple genomes, Bioinformatics, 2023;, btad121, https://doi.org/10.1093/bioinformatics/btad121
 ######################swimming in the sky and flying in the sea #############################
-
-
-
