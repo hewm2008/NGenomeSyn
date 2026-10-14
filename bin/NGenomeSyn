@@ -1570,7 +1570,7 @@ while (<INC>)
 		}
 		$GenomeRow[$Para]=$Row;
 		close INData;
-		my @Tp=split /\//,$InfoPara; my @BBccc=split /\./,$Tp[-1];
+		my @Tp=split /[\/\\]/,$InfoPara; my @BBccc=split /\./,$Tp[-1];
 		$GenomeName[$Para]=$BBccc[0];
 	}
 	elsif ($Para=~s/LinkFileRef//g)  # LinkFileRef1VsRef2=
