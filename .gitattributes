@@ -1,0 +1,21 @@
+# Windows launchers MUST stay CRLF: cmd.exe mis-parses the multi-line blocks
+# of an LF-only .bat, so double-click only flashes and closes with no message.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# shell / perl sources stay LF
+*.sh text eol=lf
+*.pl text eol=lf
+NGenomeSyn text eol=lf
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.gz  binary
+*.docx binary
+*.icns binary
+*.svg text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf

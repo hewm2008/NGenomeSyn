@@ -565,6 +565,96 @@ def test_ui():
 
 
 # ---------------------------------------------------------------------------
+def test_theme_modes():
+    """View > Theme: light / dark / follow-system must apply live and persist.
+
+    The theme only repaints the app chrome: exports stay on a white sheet.
+    """
+    import tempfile as _tf
+    from PySide6.QtCore import QSettings as _QS
+    from PySide6.QtGui import QPalette
+    from PySide6.QtWidgets import QApplication as _QA
+    _QS.setPath(_QS.IniFormat, _QS.UserScope, _tf.mkdtemp(prefix="ngs_theme_"))
+    app = _QA.instance() or _QA([])
+
+    from gui import theme as _theme
+    from gui.ui.main_window import MainWindow
+
+    # ---- palettes and stylesheet really differ -------------------------
+    for mode, want_dark in (("light", False), ("dark", True)):
+        _theme.apply_theme(app, mode)
+        check("theme.%s.mode" % mode, _theme.current_mode() == mode,
+              _theme.current_mode())
+        base = app.palette().color(QPalette.Base)
+        check("theme.%s.base_dark" % mode, (base.lightness() < 128) == want_dark,
+              base.name())
+        qss = app.styleSheet()
+        check("theme.%s.qss_tokens" % mode,
+              ("#23272b" in qss) == want_dark and "QMenu {" in qss,
+              qss[:60])
+    # an unknown mode falls back instead of leaving the app unstyled
+    _theme.apply_theme(app, "sepia")
+    check("theme.invalid_falls_back", _theme.current_mode() == "system",
+          _theme.current_mode())
+
+    # ---- the View menu wiring -----------------------------------------
+    w = MainWindow()
+    check("theme.menu_items",
+          len(w.menu_theme.actions()) == 3, len(w.menu_theme.actions()))
+    check("theme.menu_exclusive", w.theme_action_group.isExclusive())
+    for act, mode in ((w.act_theme_light, "light"), (w.act_theme_dark, "dark"),
+                      (w.act_theme_system, "system")):
+        w._set_theme_mode(mode)
+        others = [a.isChecked() for a in w.theme_action_group.actions()
+                  if a is not act]
+        check("theme.checked.%s" % mode, act.isChecked() and not any(others),
+              (act.isChecked(), others))
+        check("theme.applied.%s" % mode, _theme.current_mode() == mode)
+        check("theme.persisted.%s" % mode,
+              str(w.settings.value("theme_mode")) == mode,
+              w.settings.value("theme_mode"))
+    w._set_theme_mode("dark")
+    check("theme.menu_title", w.menu_theme.title() in ("主题", "Theme"),
+          w.menu_theme.title())
+
+    # a corrupt stored value must not raise and must land on a real mode
+    w.settings.setValue("theme_mode", "sepia")
+    w._set_theme_mode(str(w.settings.value("theme_mode")), save=False)
+    check("theme.corrupt_setting", _theme.current_mode() == "system",
+          _theme.current_mode())
+
+    # ---- retranslation on a language switch (a RectChr bug worth pinning)
+    w._refresh_texts()
+    for act in (w.act_theme_light, w.act_theme_dark, w.act_theme_system):
+        check("theme.retranslated.%s" % act.text(),
+              act.text() not in ("theme_light", "theme_dark", "theme_system"),
+              act.text())
+    check("theme.menu_retranslated",
+          w.menu_theme.title() not in ("theme",), w.menu_theme.title())
+
+    # ---- exports stay on white paper even in dark mode
+    work = Path(_tf.mkdtemp(prefix="ngs_theme_out_"))
+    svg = work / "fig.svg"
+    svg.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="120" '
+                   'height="80"><rect x="10" y="10" width="100" height="60" '
+                   'fill="#4477aa"/></svg>', encoding="utf-8")
+    w._set_theme_mode("dark")
+    check("theme.preview_load_dark", w.preview.load_svg(str(svg)))
+    png = work / "fig.png"
+    check("theme.export_png_dark", w.preview.export_png(str(png))
+          and png.stat().st_size > 200)
+    from PySide6.QtGui import QImage
+    img = QImage(str(png))
+    corner = img.pixelColor(2, 2)
+    check("theme.export_png_still_white", corner.name() in ("#ffffff", "#fefefe"),
+          corner.name())
+    shutil.rmtree(work, ignore_errors=True)
+
+    w._set_theme_mode("light")             # leave the app as the suite found it
+    w.close()
+
+
+# ---------------------------------------------------------------------------
 def test_param_toggle():
     """Ticking a parameter's enable box must never raise.
 
@@ -625,10 +715,14 @@ def test_param_toggle():
 
 
 def test_version_consistency():
-    """GUI, engine and the READMEs must all report the same version."""
+    """GUI, engine and the READMEs must all report the same version.
+
+    The GUI carries its own letter suffix (1.50B); the Perl engine stays at
+    the plain upstream 1.50 and must NOT be touched by a GUI release.
+    """
     import re as _re
     from gui import GUI_VERSION
-    check("version.gui", GUI_VERSION == "1.50", GUI_VERSION)
+    check("version.gui", GUI_VERSION == "1.50B", GUI_VERSION)
     engine = (ROOT / "bin" / "NGenomeSyn").read_text(encoding="utf-8",
                                                      errors="replace")
     found = set(_re.findall(r"Version\s*:\s*(\d+\.\d+)", engine))
@@ -638,15 +732,64 @@ def test_version_consistency():
     check("version.engine_help", "Version:1.50" in (usage.stdout + usage.stderr),
           (usage.stdout + usage.stderr)[:80])
     readme = (ROOT / "README.md").read_text(encoding="utf-8", errors="replace")
-    check("version.readme", "v1.50.tar.gz" in readme and "v1.43" not in readme)
+    check("version.readme", "v1.50B.tar.gz" in readme and "v1.43" not in readme)
     cn = (ROOT / "README_Chinese.md").read_bytes().decode("gbk", errors="replace")
-    check("version.readme_cn", "v1.50" in cn and "v1.43" not in cn)
+    check("version.readme_cn", "v1.50B" in cn and "v1.43" not in cn)
 
     # the Help dialog must NOT offer the WeChat/social-media article
     from gui.ui.main_window import MainWindow as _MW
     names = [n for _k, n, _i in _MW._MANUALS]
     check("help.no_article_entry",
           not any("WeChat" in n or "Article" in n for n in names), names)
+
+
+def test_windows_launcher_is_crlf_ascii():
+    """Every shipped .bat must be CRLF + ASCII, or cmd.exe silently dies.
+
+    An LF-only launcher parses its multi-line blocks wrongly: double-click
+    flashes once and closes with no message (reported by a Windows user,
+    who had to rename the file or run it as administrator to start).
+    """
+    bats = sorted(ROOT.glob("*.bat"))
+    check("bat.shipped", len(bats) >= 1, [p.name for p in bats])
+    for p in bats:
+        raw = p.read_bytes()
+        name = p.name
+        try:
+            raw.decode("ascii")
+            ascii_ok = True
+        except UnicodeDecodeError:
+            ascii_ok = False
+        check("bat.%s.ascii" % name, ascii_ok,
+              sorted({b for b in raw if b > 127})[:5])
+        check("bat.%s.crlf_only" % name, b"\n" not in raw.replace(b"\r\n", b""),
+              "bare LF found - cmd.exe cannot parse it")
+        check("bat.%s.has_crlf" % name, b"\r\n" in raw, "no CRLF at all")
+        check("bat.%s.ends_crlf" % name, raw.endswith(b"\r\n"), "missing final CRLF")
+        # the launcher must keep its single entry point and must never
+        # auto-launch a possibly half-built PyInstaller exe from dist\
+        txt = raw.decode("ascii", errors="replace")
+        if name == "NGenomeSynGUI.bat":
+            check("bat.main.no_dist_autolaunch",
+                  "dist\\NGenomeSynGUI\\NGenomeSynGUI.exe" not in txt)
+            check("bat.main.pyw_same_interpreter", "pythonw.exe" in txt)
+            # every failure path must funnel into a pause, never close silently
+            blocks = {}
+            cur = None
+            for line in txt.splitlines():
+                m = re.match(r"^:(\S+)\s*$", line)
+                if m:
+                    cur = m.group(1)
+                    blocks[cur] = []
+                elif cur:
+                    blocks[cur].append(line)
+            for lab in ("no_python", "no_pyside6", "selftest_failed"):
+                check("bat.main.%s_fails_visibly" % lab,
+                      lab in blocks and any("goto :failed" in l for l in blocks[lab]),
+                      "missing")
+            check("bat.main.failed_pauses",
+                  "failed" in blocks and any(l.strip() == "pause" for l in blocks["failed"]),
+                  "missing")
 
 
 def test_readme_gui_install_and_citation_last():
@@ -666,13 +809,18 @@ def test_readme_gui_install_and_citation_last():
         check("readme.%s.manual_links" % tag, "NGenomeSyn_GUI_manual_Chinese.pdf" in txt
               and "NGenomeSyn_GUI_manual_English.pdf" in txt)
 
-    # English README: section order 5 Contact, 6 GUI, 7 Citation last
+    # English README: 1 Introduction .. 3 GUI, 6 Contact, 7 Citation last
     heads = re.findall(r"^###\s+(\d+)\s+\S", en, re.M)
     check("readme.en.order", heads == ["1", "2", "3", "4", "5", "6", "7"], heads)
-    check("readme.en.contact_is_5", "### 5 Contact" in en and "### 6 Contact" not in en)
-    check("readme.en.gui_is_6", "### 6 Graphical User Interface (GUI)" in en)
-    check("readme.en.citation_last", en.index("### 7 Citation") > en.index("### 6 Graphical")
-          and en.index("### 7 Citation") < en.index("swimming in the sky"), en.index("### 7 Citation"))
+    check("readme.en.gui_is_3", "### 3 Graphical User Interface (GUI)" in en)
+    check("readme.en.contact_is_6", "### 6 Contact" in en and "### 5 Contact" not in en)
+    i_gui, i_con, i_cit = (en.find(s) for s in
+                           ("### 3 Graphical User Interface (GUI)",
+                            "### 6 Contact", "### 7 Citation"))
+    check("readme.en.all_sections_found", -1 not in (i_gui, i_con, i_cit),
+          (i_gui, i_con, i_cit))
+    check("readme.en.citation_last", i_gui < i_con < i_cit and i_cit >= 0
+          and i_cit < en.find("swimming in the sky"), (i_gui, i_con, i_cit))
 
 
 def test_doc_images_fit_page():
@@ -720,7 +868,7 @@ def test_manual_cites_article_and_points_to_readme():
     spec = importlib.util.spec_from_file_location("gen_gui_manual_c", f)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    blocks = mod._build_blocks("zh", "1.50", "1.50", mod._load_params())
+    blocks = mod._build_blocks("zh", "1.50B", "1.50", mod._load_params())
     text = "\n".join(p for k, p in blocks if k in ("h2", "h3", "p", "note", "code"))
     check("manual.cites_article", "btad121" in text and "10.1093/bioinformatics" in text)
     check("manual.points_to_readme", "README" in text and "Citation" in text)
@@ -761,9 +909,16 @@ def test_shipped_docs_cite_article_and_have_valid_styles():
 
 
 def test_wechat_article_points_to_readme():
-    """The article draft keeps the citation and points to the README."""
-    md = (ROOT / "gui" / "doc" / "NGenomeSyn_GUI_WeChat_Article.md").read_text(
-        encoding="utf-8")
+    """The article draft keeps the citation and points to the README.
+
+    The article is no longer advertised anywhere (see test_version_consistency),
+    so it is optional: only checked when the draft is actually shipped.
+    """
+    path = ROOT / "gui" / "doc" / "NGenomeSyn_GUI_WeChat_Article.md"
+    if not path.is_file():
+        check("article.optional", True, "article draft not shipped - skipped")
+        return
+    md = path.read_text(encoding="utf-8")
     check("article.cites", "btad121" in md)
     check("article.readme_link", "#7-citation" in md and "README" in md)
     en = (ROOT / "README.md").read_text(encoding="utf-8", errors="replace")
@@ -833,6 +988,7 @@ def test_all():
     test_byte_identity()
     test_param_toggle()
     test_version_consistency()
+    test_windows_launcher_is_crlf_ascii()
     test_readme_gui_install_and_citation_last()
     test_doc_images_fit_page()
     test_manual_cites_article_and_points_to_readme()
@@ -840,6 +996,7 @@ def test_all():
     test_wechat_article_points_to_readme()
     test_doc_assets()
     test_ui()
+    test_theme_modes()
     print("\n%d passed, %d failed" % (_PASSED[0], len(_FAILED)))
     if _FAILED:
         print("failed:", _FAILED)

@@ -111,8 +111,8 @@ def main(clean=False):
                       tempfile.mkdtemp(prefix="ngs_shots_"))
     from PySide6.QtWidgets import QApplication
     app = QApplication.instance() or QApplication(sys.argv)
-    from gui.theme import apply_system_theme
-    apply_system_theme(app)
+    from gui.theme import apply_theme
+    apply_theme(app, "light")               # screenshots: always the light look
 
     from gui.ui.main_window import MainWindow
     win = MainWindow()

@@ -1,14 +1,13 @@
-"""System-following theme (light/dark) for the NGenomeSyn GUI.
+"""Application theme (light / dark / follow the OS) for the NGenomeSyn GUI.
 
-The UI follows the OS color scheme (Qt 6.5+ styleHints, live via
-colorSchemeChanged) and installs a card-based, teal-accented QSS in both
-light and dark variants. The plot preview itself always renders the SVG on
-a white "paper" sheet (see gui/ui/preview.py), so figures stay correct in
-dark mode — matching the white-background PNG export."""
+Its colours are installed explicitly through a Qt palette and QSS. Users pick
+a fixed light theme, a fixed dark theme, or follow the OS scheme from the
+View menu; the OS scheme is followed live via Qt 6.5 styleHints. The plot
+preview itself always renders the SVG on a white "paper" sheet (see
+gui/ui/preview.py), so figures stay correct in dark mode — matching the
+white-background PNG export."""
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QColor, QGuiApplication, QPalette
-
-GUI_VERSION_PLACEHOLDER = None          # (version lives in gui/__init__.py)
 
 _ACCENT = {
     "light": {"accent": "#0E9488", "hover": "#0C7F75", "soft": "#E0F2F0",
@@ -83,6 +82,10 @@ def stylesheet(dark):
         "QTableWidget { background: %(base)s; color: %(text)s; alternate-background-color: %(alt)s; gridline-color: %(border)s; border: 1px solid %(border)s; border-radius: 6px; }\n"
         "QHeaderView::section { background: %(header)s; color: %(text)s; border: none; border-bottom: 1px solid %(border)s; padding: 4px 6px; }\n"
         "\n"
+        "QMenu { background: %(base)s; color: %(text)s; border: 1px solid %(border)s; padding: 3px; }\n"
+        "QMenu::item { padding: 6px 28px 6px 18px; border-radius: 0px; }\n"
+        "QMenu::item:selected { background: %(hover_bg)s; color: %(text)s; }\n"
+        "\n"
         "QScrollBar:vertical { background: transparent; width: 10px; margin: 2px; }\n"
         "QScrollBar::handle:vertical { background: %(border)s; border-radius: 4px; min-height: 30px; }\n"
         "QScrollBar::handle:vertical:hover { background: %(mid)s; }\n"
@@ -125,13 +128,6 @@ def make_card(title):
     t.setObjectName("cardTitle")
     v.addWidget(t)
     return card, v
-
-
-def _disabled_updates(p, text, window, button):
-    p.setColor(QPalette.Disabled, QPalette.WindowText, QColor(text))
-    p.setColor(QPalette.Disabled, QPalette.Text, QColor(text))
-    p.setColor(QPalette.Disabled, QPalette.ButtonText, QColor(button))
-    p.setColor(QPalette.Disabled, QPalette.Window, QColor(window))
 
 
 def dark_palette():
@@ -188,18 +184,44 @@ def _scheme_is_dark():
         return False
 
 
-def apply_system_theme(app):
-    """Fusion style + palette + QSS that follow the OS light/dark scheme."""
-    app.setStyle("Fusion")
+MODES = ("light", "dark", "system")
+DEFAULT_MODE = "system"
 
-    def _apply(*_a):
-        dark = _scheme_is_dark()
-        app.setPalette(dark_palette() if dark else light_palette())
-        app.setStyleSheet(stylesheet(dark))
+_theme_state = {"app": None, "mode": DEFAULT_MODE, "system_connected": False}
 
-    _apply()
-    try:
-        QGuiApplication.styleHints().colorSchemeChanged.connect(_apply)
-    except Exception:
-        pass                              # older Qt: stays on the initial scheme
-    return _apply
+
+def _apply_active_theme(*_args):
+    """Repaint the app for the current mode; a no-op repaint when not on system."""
+    app = _theme_state["app"]
+    if app is None:
+        return
+    mode = _theme_state["mode"]
+    dark = _scheme_is_dark() if mode == "system" else mode == "dark"
+    app.setPalette(dark_palette() if dark else light_palette())
+    app.setStyleSheet(stylesheet(dark))
+
+
+def apply_theme(app, mode=DEFAULT_MODE):
+    """Fusion style + palette + QSS for ``light``, ``dark`` or the OS scheme.
+
+    While ``mode`` is ``system`` the OS light/dark switch is followed live;
+    on a fixed mode it is ignored.
+    """
+    if mode not in MODES:
+        mode = DEFAULT_MODE
+    app.setStyle("Fusion")               # QSS only renders predictably on Fusion
+    _theme_state["app"] = app
+    _theme_state["mode"] = mode
+    _apply_active_theme()
+    if not _theme_state["system_connected"]:
+        try:
+            QGuiApplication.styleHints().colorSchemeChanged.connect(_apply_active_theme)
+            _theme_state["system_connected"] = True
+        except Exception:
+            pass                          # older Qt: stays on the initial scheme
+    return _apply_active_theme
+
+
+def current_mode():
+    """The mode currently in effect ('light', 'dark' or 'system')."""
+    return _theme_state["mode"]

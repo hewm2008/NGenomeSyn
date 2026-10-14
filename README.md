@@ -29,7 +29,7 @@ In addition, <b>NGenomeSyn</b>  has been cited to visualize genome synteny or ot
 The <b>new version</b> will be updated and maintained in <b>[hewm2008/NGenomeSyn](https://github.com/hewm2008/NGenomeSyn)</b>, please click below website to download the latest version
 </br><p align="center"><b>[hewm2008/NGenomeSyn](https://github.com/hewm2008/NGenomeSyn)</b></p>
 
-<b>Linux / macOS / Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [Download v1.50](https://github.com/hewm2008/NGenomeSyn/archive/v1.50.tar.gz)</b>
+<b>Linux / macOS / Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [Download v1.50B](https://github.com/hewm2008/NGenomeSyn/archive/v1.50B.tar.gz)</b>
 </br><b>Install</b>
 </br> <b>2.2 Pre-install</b>
 </br> The prerequisites for NGenomeSyn include
@@ -58,6 +58,12 @@ The <b>new version</b> will be updated and maintained in <b>[hewm2008/NGenomeSyn
 install [Strawberry Perl](https://strawberryperl.com/) or unzip the portable build so that
 <code>gui_runtime/perl/perl/bin/perl.exe</code> exists. 
 
+</br>If double-click does nothing at all (the window flashes and closes), unzip with
+"Extract All" and tick <b>Unblock</b> on Windows, or right-click the extracted
+<code>NGenomeSynGUI.bat</code> → Properties → <b>Unblock</b>. Administrator rights are
+never required; if the launcher cannot start it prints the reason and the log path
+(<code>%TEMP%\ngs_gui_launcher.log</code>).
+
 ### 3 Graphical User Interface (GUI)
 
 <img src="gui/doc/GUI_Home.png" width="80%" alt="NGenomeSyn GUI">
@@ -81,8 +87,9 @@ Highlights:
   documented nowhere** — the GUI is the only practical way to reach them.
 - **35 built-in RColorBrewer palettes** with live swatches, for chromosome bars,
   link ribbons and special regions.
-- **Bilingual** interface (中文 / English) that follows the system light/dark
-  theme.
+- **Bilingual** interface (中文 / English), and a **View → Theme → Light / Dark /
+  Follow system** switch (follows the system by default; it recolours the app
+  chrome only - exported PNG/PDF stay on white paper).
 
 Run it without any command line:
 

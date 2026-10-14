@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 from PySide6.QtCore import QSettings, QTimer, Qt, QUrl
-from PySide6.QtGui import QAction, QKeySequence
+from PySide6.QtGui import QAction, QActionGroup, QKeySequence
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
                                QDialogButtonBox, QDockWidget, QFileDialog,
                                QFrame, QHBoxLayout, QLabel, QMainWindow, QMenu,
@@ -18,7 +18,7 @@ from ..core.gzcache import map_all_paths
 from ..core import validate as _validate_mod
 from ..core.runner import ENGINE, GUI_DIR, ROOT, Runner, find_perl
 from ..i18n import I18N
-from ..theme import make_card
+from ..theme import apply_theme, make_card
 from .files_panel import LeftFilesPanel
 from .genome_tab import (LazyGenomePage, LazyLinkPage, LazyPage,
                          genome_tab_title, link_tab_title)
@@ -114,6 +114,19 @@ class MainWindow(QMainWindow):
         self.act_reset_layout = QAction(I18N.tr("reset_layout"), self)
         self.act_reset_layout.triggered.connect(self._reset_layout)
 
+        self.theme_action_group = QActionGroup(self)
+        self.theme_action_group.setExclusive(True)
+        self.act_theme_light = QAction(I18N.tr("theme_light"), self)
+        self.act_theme_dark = QAction(I18N.tr("theme_dark"), self)
+        self.act_theme_system = QAction(I18N.tr("theme_system"), self)
+        for action, mode in ((self.act_theme_light, "light"),
+                             (self.act_theme_dark, "dark"),
+                             (self.act_theme_system, "system")):
+            action.setCheckable(True)
+            self.theme_action_group.addAction(action)
+            action.triggered.connect(
+                lambda _checked=False, m=mode: self._set_theme_mode(m))
+
         self.menu_file = QMenu(I18N.tr("menu_file"), self)
         for a in (self.act_new, self.act_open, self.act_save):
             self.menu_file.addAction(a)
@@ -124,7 +137,15 @@ class MainWindow(QMainWindow):
         for d in (self.files_dock, self.params_dock, self.log_dock):
             self.menu_view.addAction(d.toggleViewAction())
         self.menu_view.addSeparator()
+        self.menu_theme = QMenu(I18N.tr("theme"), self)
+        self.menu_theme.addActions((self.act_theme_light, self.act_theme_dark,
+                                    self.act_theme_system))
+        self.menu_view.addMenu(self.menu_theme)
+        self.menu_view.addSeparator()
         self.menu_view.addAction(self.act_reset_layout)
+        # restore the saved theme last: the actions must exist first
+        self._set_theme_mode(str(self.settings.value("theme_mode", "system")),
+                             save=False)
         self.menu_help = QMenu(I18N.tr("help"), self)
         self.menu_help.addAction(self.act_help)
         self.menu_help.addAction(self.act_about)
@@ -574,6 +595,16 @@ class MainWindow(QMainWindow):
             self.addDockWidget(area, dock)
             dock.setVisible(True)
 
+    def _set_theme_mode(self, mode, save=True):
+        """Apply and persist the View > Theme selection (live, no restart)."""
+        actions = {"light": self.act_theme_light, "dark": self.act_theme_dark,
+                   "system": self.act_theme_system}
+        mode = mode if mode in actions else "system"
+        actions[mode].setChecked(True)     # setChecked does not re-emit triggered
+        apply_theme(QApplication.instance(), mode)
+        if save:
+            self.settings.setValue("theme_mode", mode)
+
     def _build_statusbar(self):
         self.statusBar().showMessage("Perl: %s" % (find_perl() or I18N.tr("perl_missing")))
 
@@ -764,6 +795,7 @@ class MainWindow(QMainWindow):
         self.files_dock.setWindowTitle(I18N.tr("data_files") + " / " + I18N.tr("link_files"))
         self.menu_file.setTitle(I18N.tr("menu_file"))
         self.menu_view.setTitle(I18N.tr("view_menu"))
+        self.menu_theme.setTitle(I18N.tr("theme"))
         self.menu_help.setTitle(I18N.tr("help"))
         self.btn_file_menu.setText(I18N.tr("menu_file"))
         self.btn_view_menu.setText(I18N.tr("view_menu"))
@@ -782,6 +814,9 @@ class MainWindow(QMainWindow):
         self.act_png.setText(I18N.tr("export_png"))
         self.act_pdf.setText(I18N.tr("export_pdf"))
         self.act_reset_layout.setText(I18N.tr("reset_layout"))
+        self.act_theme_light.setText(I18N.tr("theme_light"))
+        self.act_theme_dark.setText(I18N.tr("theme_dark"))
+        self.act_theme_system.setText(I18N.tr("theme_system"))
         self.btn_file_menu.setToolTip(I18N.tr("menu_file"))
         self.btn_view_menu.setToolTip(I18N.tr("view_menu"))
         self.btn_help_menu.setToolTip(I18N.tr("help"))

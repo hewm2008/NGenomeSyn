@@ -23,6 +23,9 @@ Windows/Linux/macOS; it drives the original, **unmodified** Perl engine.
 - **运行前配置检查**：.len/.link 列数、start/end 规则、ZoomRegion 越界、
   未知调色板名（会导致引擎除零崩溃）等，全部在运行前拦截
 - SVG 实时预览 + 缩放，导出高分辨率 PNG / PDF（由 Qt 渲染，不依赖 ImageMagick）
+- **视图 → 主题 → 浅色 / 深色 / 跟随系统**：即时切换、无需重启，选择写入
+  `QSettings`（`theme_mode`）；"跟随系统"时实时响应操作系统深浅色变化；
+  仅影响界面配色，导出的 PNG / PDF 始终白底，图不受影响
 - 中英双语界面，一键切换；布局与语言记忆
 
 ## 引擎改动：仅 1 处（Windows 必需）
@@ -115,7 +118,13 @@ Qt 渲染 → 临时目录可写。
 > 没装 PySide6 的 Python。
 >
 > 注：`NGenomeSynGUI.bat` 必须保持 **CRLF + ASCII**。UTF-8 中文注释或 LF 行尾会让
-> `cmd.exe` 解析异常，表现为双击闪退。
+> `cmd.exe` 解析异常，表现为双击闪退（曾有 Windows 用户因此必须改名或以管理员身份
+> 运行才能启动）。`gui/tests/test_gui_regressions.py` 的
+> `test_windows_launcher_is_crlf_ascii` 会在 Linux 上校验这一点，`.gitattributes`
+> 则用 `*.bat text eol=crlf` 防止 checkout 被改回 LF。
+>
+> 另：若双击毫无反应，先确认解压时已"解除锁定"（Windows 属性对话框底部的
+> *Unblock*，或用"全部解压缩"）。启动器本身**不需要管理员权限**。
 
 ### 打包发行版（Windows 双击即用）
 

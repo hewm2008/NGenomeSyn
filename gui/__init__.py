@@ -1,3 +1,3 @@
 """NGenomeSyn GUI package."""
 
-GUI_VERSION = "1.50"
+GUI_VERSION = "1.50B"

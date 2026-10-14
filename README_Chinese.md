@@ -26,7 +26,7 @@ An easy-to-use and flexible tool for pretty visualization of syntenic relationsh
 The <b>new version</b> will be updated and maintained in <b>[hewm2008/NGenomeSyn](https://github.com/hewm2008/NGenomeSyn)</b>, please click below website to download the latest version
 </br><p align="center"><b>[hewm2008/NGenomeSyn](https://github.com/hewm2008/NGenomeSyn)</b></p>
 
-<b> 2.1. Linux / macOS / Windows&nbsp;&nbsp;&nbsp;   [Download v1.50](https://github.com/hewm2008/NGenomeSyn/archive/v1.50.tar.gz)</b>
+<b> 2.1. Linux / macOS / Windows&nbsp;&nbsp;&nbsp;   [Download v1.50B](https://github.com/hewm2008/NGenomeSyn/archive/v1.50B.tar.gz)</b>
   </br> Windows 用户可直接使用图形界面（GUI），需安装 [Perl](https://strawberryperl.com/) 和 [Python 3](https://www.python.org/)。
   
   </br> <b>2.2 Pre-install</b>
@@ -51,7 +51,12 @@ The <b>new version</b> will be updated and maintained in <b>[hewm2008/NGenomeSyn
 </pre>
   </br> GUI 仍需 Perl 来运行引擎，与命令行模式相同。Windows 用户可安装
   [Strawberry Perl](https://strawberryperl.com/)，或解压便携版使
-  <code>gui_runtime/perl/perl/bin/perl.exe</code> 存在。详见第 7 节图形界面说明。
+  <code>gui_runtime/perl/perl/bin/perl.exe</code> 存在。详见第 3 节图形界面说明。
+
+  </br> 若双击毫无反应（窗口一闪即消失），请用"全部解压缩"并勾选"解除锁定"，
+  或在解压后的 <code>NGenomeSynGUI.bat</code> 上右键 → 属性 → 勾选"解除锁定"。
+  <b>不需要管理员权限</b>；若启动器无法运行，它会打印原因和日志路径
+  （<code>%TEMP%\ngs_gui_launcher.log</code>）。
 
 
 ###  3 图形界面 GUI
@@ -72,7 +77,8 @@ NGenomeSyn 提供跨平台图形界面（Windows / Linux / macOS），驱动的�
 - **66 个参数**，均标注引擎真实默认值与取值范围（由 Perl 源码交叉校验得出），
   其中 **17 个引擎真实读取但官方文档从未提及**；
 - **35 个内置 RColorBrewer 调色板**，色条预览后再选；
-- **中英双语**界面，跟随系统深色/浅色主题。
+- **中英双语**界面；**视图 → 主题 → 浅色 / 深色 / 跟随系统** 随时切换（默认跟随
+  系统，导出图始终白底不受影响）。
 
 运行方式（无需命令行）：
 
@@ -257,7 +263,7 @@ UpUp DownDown和三角型作图
 </br>速度快，少内存
 </br>可以自我定义组合多层次
 </br>有perl即可以运行，免安装
-</br>GUI v1.50
+</br>GUI v1.50B
 
 ### 7 Discussing
 ------------

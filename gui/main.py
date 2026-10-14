@@ -186,9 +186,9 @@ def main():
 
     if not safe:
         try:
-            from gui.theme import apply_system_theme
-            apply_system_theme(app)
-            _log("stage: theme applied")
+            from gui.theme import apply_theme, current_mode as theme_current_mode
+            apply_theme(app, "system")     # saved preference is applied by MainWindow
+            _log("stage: theme applied (%s)" % theme_current_mode())
         except Exception as e:                          # noqa: BLE001
             _log("theme failed (continuing): %r" % (e,))
 

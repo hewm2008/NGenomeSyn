@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# GUI build output (see gui/tools/build_windows.py)
+dist/
+build/
+*.spec.bak
+
+# runtime probes / logs
+ngs_gui_probe/
+ngs_gui_launch*.log
+ngs_gui_crash.log
